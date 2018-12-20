@@ -3,7 +3,7 @@
 document.addEventListener("DOMContentLoaded", function (e) {
     const explanations = document.querySelector(".explanations");
     const sentences = ['Hello World!',
-        "Vous êtes bien sur le site du PasteurCodeClub.",
+        "Vous êtes bien sur le site du PasteurCodeClub du collège de Raon.",
         "Dans quelques jours, vous pourrez demander votre inscription sur ce site.",
         "A bientôt..."
     ];
