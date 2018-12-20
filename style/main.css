@@ -23,6 +23,9 @@ body {
 }
 
 header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100vw;
     height: 10%;
     font-size: 3rem;
@@ -110,11 +113,18 @@ input[type="submit"] {
 
 footer {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: 10%;
     border-top: 2px dotted chartreuse;
 }
 
-footer div {
+
+.container {
+    display: flex;
+}
+
+.container div {
     display: flex;
     margin-right: .5rem;
 }
