@@ -3,7 +3,9 @@
 document.addEventListener("DOMContentLoaded", function (e) {
     const explanations = document.querySelector(".explanations");
     const sentences = ['Hello World!',
-        "Dans quelques jours, il sera possible de demander une inscription au club.",
+        "Vous êtes bien sur le site du PasteurCodeClub.",
+        "Dans quelques jours, vous pourrez demander votre inscription sur ce site.",
+        "A bientôt..."
     ];
     const typeWriter = (string, element) => {
         const chars = string.split('');
