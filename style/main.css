@@ -1,0 +1,130 @@
+html {
+    background-color: black;
+    color: chartreuse;
+    font-size: 24px;
+    font-family: 'Exo', Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.blinking {
+    animation: blinking .8s infinite;
+}
+
+.line {
+    display: flex;
+}
+
+header {
+    width: 100vw;
+    font-size: 3rem;
+    font-family: 'Monoton', Helvetica, sans-serif;
+    border-bottom: 2px dotted chartreuse;
+}
+
+main {
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+}
+
+.explanations {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+form {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 50vw;
+    height: 50vh;
+    background-color: darkslategrey;
+    border-radius: .7rem;
+    border: 1px solid chartreuse;
+    border-color: chartreuse;
+}
+
+input {
+    box-sizing: border-box;
+    border-radius: .7rem;
+    border: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding: .5rem;
+    height: 2rem;
+    margin-top: 1rem;
+}
+
+input::placeholder {
+    color: black;
+    opacity: 0.4;
+}
+
+#infos {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+#name,
+#firstName {
+    width: 40%;
+}
+
+#class {
+    width: 10%;
+}
+
+#mail {
+    width: 90%;
+}
+
+#email {
+    width: 100%;
+    ;
+}
+
+input[type="submit"] {
+    width: 50%;
+}
+
+input[type="submit"] {
+    color: whitesmoke;
+    background-color: darkgreen;
+    margin-bottom: 1rem;
+    vertical-align: center;
+}
+
+footer {
+    display: flex;
+    border-top: 2px dotted chartreuse;
+}
+
+footer div {
+    display: flex;
+    margin-right: .5rem;
+}
+
+@keyframes blinking {
+    0% {
+        color: black
+    }
+
+    50% {
+        color: chartreuse
+    }
+
+    100% {
+        color: black
+    }
+}
