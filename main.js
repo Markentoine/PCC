@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
     const sentences = ['Hello World!',
         "Vous êtes bien sur le site du PasteurCodeClub du collège de Raon.",
         "Dans quelques jours, vous pourrez demander votre inscription sur ce site.",
-        "A bientôt.",
+        "A très bientôt!",
+        "Bonnes vacances à tous!",
     ];
     const typeWriter = (string, element) => {
         const chars = string.split('');
