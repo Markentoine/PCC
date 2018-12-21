@@ -53,6 +53,11 @@ document.addEventListener("DOMContentLoaded", function (e) {
             })
         }, 1000);
     };
+
+    if (checkDate(2019, 1, 1)) {
+        const form = document.querySelector('form');
+        form.style.visibility = 'visible';
+    }
     countDown();
     writeLines();
 
@@ -74,4 +79,12 @@ function computeLeftTime() {
         minutes: minutes,
         seconds: secondsLast,
     };
+}
+
+function checkDate(year, month, day) {
+    const currentDate = new Date();
+    const currentYear = currentDate.getFullYear();
+    const currentMonth = currentDate.getMonth() + 1;
+    const currentDay = currentDate.getUTCDate();
+    return currentYear === +year && currentMonth === +month && currentDay === +day;
 }

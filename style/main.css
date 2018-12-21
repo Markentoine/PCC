@@ -2,7 +2,7 @@ html {
     height: 100%;
     background-color: black;
     color: chartreuse;
-    font-size: 24px;
+    font-size: 1.7vw;
     font-family: 'Exo', Helvetica, sans-serif;
     box-sizing: border-box;
 }
@@ -28,9 +28,13 @@ header {
     justify-content: center;
     width: 100vw;
     height: 10%;
-    font-size: 3rem;
     font-family: 'Monoton', Helvetica, sans-serif;
     border-bottom: 2px dotted chartreuse;
+    margin-left: .5rem;
+}
+
+header p {
+    font-size: 3rem;
 }
 
 main {
@@ -38,11 +42,13 @@ main {
     height: 80%;
     width: 100vw;
     flex-direction: column;
+    margin-left: 1rem;
 }
 
 .explanations {
     display: flex;
     flex-direction: column;
+    height: 40%;
     margin-top: 1rem;
 }
 
@@ -50,14 +56,16 @@ form {
     visibility: hidden;
     display: flex;
     flex-direction: column;
+    height: 60%;
     justify-content: space-around;
     align-items: center;
     width: 50vw;
     height: 50vh;
-    background-color: darkslategrey;
+    background-color: black;
     border-radius: .7rem;
     border: 1px solid chartreuse;
     border-color: chartreuse;
+    margin-bottom: .8rem;
 }
 
 input {
@@ -105,8 +113,8 @@ input[type="submit"] {
 }
 
 input[type="submit"] {
-    color: whitesmoke;
-    background-color: darkgreen;
+    color: black;
+    background-color: chartreuse;
     margin-bottom: 1rem;
     vertical-align: center;
 }
@@ -117,6 +125,7 @@ footer {
     justify-content: center;
     height: 10%;
     border-top: 2px dotted chartreuse;
+    margin-left: .5rem;
 }
 
 
