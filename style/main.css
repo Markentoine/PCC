@@ -2,7 +2,7 @@ html {
     height: 100%;
     background-color: black;
     color: chartreuse;
-    font-size: 1.7vw;
+    font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
     font-family: 'Exo', Helvetica, sans-serif;
     box-sizing: border-box;
 }
