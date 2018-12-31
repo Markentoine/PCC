@@ -71,8 +71,8 @@ const computeLeftTime = () => {
 };
 
 const dateExpired = (year, month, day) => {
-    const currentDate = new Date(year, month, day);
-    const toCheckDate = new Date();
+    const currentDate = new Date();
+    const toCheckDate = new Date(year, month, day);
     return currentDate >= toCheckDate;
     //const currentDate = new Date();
     //const currentYear = currentDate.getFullYear();
