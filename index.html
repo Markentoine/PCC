@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
     <meta charset="utf-8" />
@@ -20,12 +20,18 @@
         <div class="explanations">
             <span class="blinking">_</span>
         </div>
-        <form action="">
+        <form action="" name="signIn" method='POST' data-netlify="true" novalidate>
             <div id="infos">
-                <input type="text" placeholder="NOM" id="name">
-                <input type="text" placeholder="PRENOM" id="firstName">
-                <input type="text" placeholder="6°Z" id="class">
+                <input type="text" placeholder="NOM" id="lastName" name="lastName" pattern="[A-Za-z]+" required
+                    autofocus>
+                <input type="text" placeholder="PRENOM" id="firstName" name="firstName" pattern="[A-Za-z]+" required>
+                <select name="division" id="division">
+                    <option value="5B">5B</option>
+                    <option value="4D">4D</option>
+                    <option value="4E">4E</option>
+                </select>
             </div>
+            <div data-netlify-recaptcha="true"></div>
             <div id="mail"><input id="email" type="email" placeholder="exemple@mail.com"></div>
             <input type="submit" value="Je voudrais m'inscrire">
         </form>
