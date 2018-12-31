@@ -3,10 +3,12 @@
     document.addEventListener("DOMContentLoaded", function (e) {
         const explanations = document.querySelector(".explanations");
 
-        if (dateExpired(2019, 0, 1)) {
+        if (dateExpired(2018, 0, 1)) {
             const form = document.querySelector('form');
             form.style.visibility = 'visible';
-            form.addEventListener('input', checkValidity);
+            form.addEventListener('focusin', greenLight);
+            form.addEventListener('focusout', checkValidity);
+            form.oninput = checkValidity;
             writeLines(sentences.after, explanations);
         } else {
             writeLines(sentences.before, explanations);
@@ -103,16 +105,26 @@
         ]
     };
 
-    const removeLight = (el, color)=> {
+    const removeLight = (el, color) => {
         el.classList.remove(`${color}Light`);
-    }
-    const addLight = (el, color)=> {
+    };
+    const addLight = (el, color) => {
         el.classList.add(`${color}Light`);
-    }
+    };
+
+    const greenLight = e => {
+        const target = e.target;
+        const containRedP = target.classList.contains('redLight');
+        if (containRedP) {
+            removeLight(target, 'red');
+            addLight(target, 'green');
+        } else {
+            addLight(target, 'green');
+        }
+    };
 
     const checkValidity = e => {
         let target = e.target;
-        console.log('fired');
         let validity = validP(target);
         if (!validity) {
             removeLight(target, 'green');
@@ -121,7 +133,7 @@
             removeLight(target, 'red');
             addLight(target, 'green');
         }
-    }
+    };
 
     const validP = el => el.validity.valid;
 }());
