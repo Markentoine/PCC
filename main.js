@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         }, 1000);
     };
 
-    if (checkDate(2019, 1, 1)) {
+    if (dateExpired(2019, 1, 1)) {
         const form = document.querySelector('form');
         form.style.visibility = 'visible';
     }
@@ -68,15 +68,18 @@ const computeLeftTime = () => {
         minutes: minutes,
         seconds: secondsLast,
     };
-}
+};
 
-const checkDate= (year, month, day) => {
-    const currentDate = new Date();
-    const currentYear = currentDate.getFullYear();
-    const currentMonth = currentDate.getMonth() + 1;
-    const currentDay = currentDate.getUTCDate();
-    return currentYear === +year && currentMonth === +month && currentDay === +day;
-}
+const dateExpired = (year, month, day) => {
+    const currentDate = new Date(year, month, day);
+    const toCheckDate = new Date();
+    return currentDate >= toCheckDate;
+    //const currentDate = new Date();
+    //const currentYear = currentDate.getFullYear();
+    //const currentMonth = currentDate.getMonth() + 1;
+    //const currentDay = currentDate.getUTCDate();
+    //return currentYear >= +year && currentMonth >= +month && currentDay >= +day;
+};
 
 const typeWriter = (string, element) => {
     const chars = string.split('');
@@ -89,4 +92,4 @@ const typeWriter = (string, element) => {
         }, counter);
         counter += 100;
     })
-}
+};
