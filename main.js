@@ -3,7 +3,7 @@
     document.addEventListener("DOMContentLoaded", function (e) {
         const explanations = document.querySelector(".explanations");
 
-        if (dateExpired(2018, 0, 1)) {
+        if (dateExpired(2019, 0, 1)) {
             const form = document.querySelector('form');
             form.style.visibility = 'visible';
             form.addEventListener('focusin', greenLight);
