@@ -1,6 +1,6 @@
-'use strict'
 
 (function () {
+    'use strict'
     document.addEventListener("DOMContentLoaded", function (e) {
     const explanations = document.querySelector(".explanations");
 

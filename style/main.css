@@ -69,6 +69,7 @@ form {
     margin-bottom: .8rem;
 }
 
+
 input, select {
     box-sizing: border-box;
     border-radius: .7rem;
@@ -78,6 +79,13 @@ input, select {
     padding: .5rem;
     height: 2rem;
     margin-top: 1rem;
+}
+
+input[name="bot-field"] {
+    visibility: hidden;
+    height: 0rem;
+    margin-top: 0;
+    padding: 0;
 }
 
 input::placeholder {
