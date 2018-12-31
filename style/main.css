@@ -119,6 +119,10 @@ select {
     margin-top: 1rem;
 }
 
+input:focus {
+    outline: none;
+}
+
 input[type="submit"] {
     width: 50%;
     color: black;
@@ -144,6 +148,14 @@ footer {
 .container div {
     display: flex;
     margin-right: .5rem;
+}
+
+.greenLight {
+    border: 3px solid chartreuse;
+}
+
+.redLight {
+    border: 3px solid red;
 }
 
 @keyframes blinking {
