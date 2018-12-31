@@ -8,18 +8,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         "A très bientôt!",
         "Bonnes vacances à tous!",
     ];
-    const typeWriter = (string, element) => {
-        const chars = string.split('');
-        let counter = 100;
-        element.textContent = "\>";
-        chars.forEach(char => {
-            setTimeout(() => {
-                let text = element.textContent;
-                element.textContent = `${text}${char}`;
-            }, counter);
-            counter += 100;
-        })
-    }
+
     const buildNewLine = sentence => {
         document.querySelector('.explanations span').remove();
         const div = document.createElement('div');
@@ -34,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         typeWriter(sentence, p);
     };
     const writeLines = () => {
-        let counter = 3000;
+        let counter = 2000;
         sentences.forEach(sentence => {
             setTimeout(() => buildNewLine(sentence), counter);
             counter += sentence.length * 100;
@@ -63,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 })
 
-function computeLeftTime() {
+const computeLeftTime = () => {
     const OPENDATE = new Date('January 7, 2019 12:35:00');
     const dateNow = new Date();
     let secondsLast = Math.floor((OPENDATE - dateNow) / 1000);
@@ -81,10 +70,23 @@ function computeLeftTime() {
     };
 }
 
-function checkDate(year, month, day) {
+const checkDate= (year, month, day) => {
     const currentDate = new Date();
     const currentYear = currentDate.getFullYear();
     const currentMonth = currentDate.getMonth() + 1;
     const currentDay = currentDate.getUTCDate();
     return currentYear === +year && currentMonth === +month && currentDay === +day;
+}
+
+const typeWriter = (string, element) => {
+    const chars = string.split('');
+    let counter = 100;
+    element.textContent = "\>";
+    chars.forEach(char => {
+        setTimeout(() => {
+            let text = element.textContent;
+            element.textContent = `${text}${char}`;
+        }, counter);
+        counter += 100;
+    })
 }
