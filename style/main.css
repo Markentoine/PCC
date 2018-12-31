@@ -69,7 +69,6 @@ form {
     margin-bottom: .8rem;
 }
 
-
 input, select {
     box-sizing: border-box;
     border-radius: .7rem;
@@ -93,7 +92,7 @@ input::placeholder {
     opacity: 0.4;
 }
 
-#infos {
+.infos {
     display: flex;
     justify-content: space-between;
     width: 90%;
@@ -108,20 +107,20 @@ select {
     width: 10%;
 }
 
-#mail {
+.mail {
     width: 90%;
 }
 
 #email {
     width: 100%;
-    ;
+}
+
+.captcha {
+    margin-top: 1rem;
 }
 
 input[type="submit"] {
     width: 50%;
-}
-
-input[type="submit"] {
     color: black;
     background-color: chartreuse;
     margin-bottom: 1rem;

@@ -16,13 +16,14 @@
     <header>
         <p>PASTEURCODECLUB</p>
     </header>
+
     <main>
         <div class="explanations">
             <span class="blinking">_</span>
         </div>
         <form action="" name="signIn" method='POST' netlify-honeypot="bot-field" data-netlify="true" novalidate>
             <input name="bot-field" /></label>
-            <div id="infos">
+            <div class="infos">
                 <input type="text" placeholder="NOM" id="lastName" name="lastName" pattern="[A-Za-z]+" required
                     autofocus>
                 <input type="text" placeholder="PRENOM" id="firstName" name="firstName" pattern="[A-Za-z]+" required>
@@ -32,11 +33,12 @@
                     <option value="4E">4E</option>
                 </select>
             </div>
-            <div data-netlify-recaptcha="true"></div>
-            <div id="mail"><input id="email" type="email" placeholder="exemple@mail.com"></div>
+            <div class="captcha" data-netlify-recaptcha="true"></div>
+            <div class="mail"><input id="email" type="email" placeholder="exemple@mail.com"></div>
             <input type="submit" value="Je voudrais m'inscrire">
         </form>
     </main>
+
     <footer>
         <div class="container">
             <p>Première séance dans : </p>
