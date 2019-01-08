@@ -14,7 +14,6 @@
             writeLines(sentences.before, explanations);
         }
         countDown();
-
     });
 
     const countDown = () => {
@@ -32,9 +31,9 @@
     };
 
     const computeLeftTime = () => {
-        const OPENDATE = new Date('January 8, 2019 12:35:00');
+        const OPENDATE = new Date('January 15, 2019 12:35:00');
         const dateNow = new Date();
-        let secondsLast = Math.floor((OPENDATE - dateNow) / 1000);
+        const secondsLast = Math.floor((OPENDATE - dateNow) / 1000);
         const days = Math.floor(secondsLast / 60 / 60 / 24);
         secondsLast -= days * 24 * 60 * 60;
         const hours = Math.floor(secondsLast / 60 / 60);
