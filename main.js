@@ -98,7 +98,7 @@
         ],
         after: ['Hello World!',
             "La première séance est reportée au 18 janvier.",
-            "Vous pouvez désormais encore demander votre inscription en remplissant le formulaire ci-dessous.",
+            "Vous pouvez encore demander votre inscription en remplissant le formulaire ci-dessous.",
             "L'adresse email n'est pas obligatoire.",
             "Happy Coding!"
         ]
