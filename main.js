@@ -109,37 +109,37 @@
     };
 
     const formUtilities = {
-            removeLight: (el, color) => {
-                el.classList.remove(`${color}Light`);
-            },
+        removeLight: (el, color) => {
+            el.classList.remove(`${color}Light`);
+        },
 
-            addLight: (el, color) => {
-                el.classList.add(`${color}Light`);
-            },
+        addLight: (el, color) => {
+            el.classList.add(`${color}Light`);
+        },
 
-            greenLight: function (e) {
-                const target = e.target;
-                const containRedP = target.classList.contains('redLight');
-                if (containRedP) {
-                    formUtilities.removeLight(target, 'red');
-                    formUtilities.addLight(target, 'green');
-                } else {
-                    formUtilities.addLight(target, 'green');
-                }
-            },
+        greenLight: function (e) {
+            const target = e.target;
+            const containRedP = target.classList.contains('redLight');
+            if (containRedP) {
+                formUtilities.removeLight(target, 'red');
+                formUtilities.addLight(target, 'green');
+            } else {
+                formUtilities.addLight(target, 'green');
+            }
+        },
 
-            checkValidity: function (e) {
-                let target = e.target;
-                let validity = formUtilities.validP(target);
-                if (!validity) {
-                    formUtilities.removeLight(target, 'green');
-                    formUtilities.addLight(target, 'red');
-                } else {
-                    formUtilities.removeLight(target, 'red');
-                    formUtilities.addLight(target, 'green');
-                }
-            },
+        checkValidity: function (e) {
+            let target = e.target;
+            let validity = formUtilities.validP(target);
+            if (!validity) {
+                formUtilities.removeLight(target, 'green');
+                formUtilities.addLight(target, 'red');
+            } else {
+                formUtilities.removeLight(target, 'red');
+                formUtilities.addLight(target, 'green');
+            }
+        },
 
-            validP: el => el.validity.valid,
+        validP: el => el.validity.valid,
     };
 }());
