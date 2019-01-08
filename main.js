@@ -97,8 +97,8 @@
             "Bonnes vacances à tous!",
         ],
         after: ['Hello World!',
-            "Bonne Année 2019!",
-            "Vous pouvez désormais demander votre inscription en remplissant le formulaire ci-dessous.",
+            "La première séance est reportée au 18 janvier.",
+            "Vous pouvez désormais encore demander votre inscription en remplissant le formulaire ci-dessous.",
             "L'adresse email n'est pas obligatoire.",
             "Happy Coding!"
         ]
