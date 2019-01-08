@@ -33,7 +33,7 @@
     const computeLeftTime = () => {
         const OPENDATE = new Date('January 15, 2019 12:35:00');
         const dateNow = new Date();
-        const secondsLast = Math.floor((OPENDATE - dateNow) / 1000);
+        let secondsLast = Math.floor((OPENDATE - dateNow) / 1000);
         const days = Math.floor(secondsLast / 60 / 60 / 24);
         secondsLast -= days * 24 * 60 * 60;
         const hours = Math.floor(secondsLast / 60 / 60);
