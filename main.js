@@ -69,7 +69,7 @@
 
     const utilities = {
         computeLeftTime: () => {
-            const OPENDATE = new Date('January 15, 2019 12:35:00');
+            const OPENDATE = new Date('January 22, 2019 12:30:00');
             const dateNow = new Date();
             let secondsLast = Math.floor((OPENDATE - dateNow) / 1000);
             const days = Math.floor(secondsLast / 60 / 60 / 24);
