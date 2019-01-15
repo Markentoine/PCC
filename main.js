@@ -2,24 +2,34 @@
     'use strict'
     document.addEventListener("DOMContentLoaded", function (e) {
         const explanations = document.querySelector(".explanations");
-
+        const currentDate = new Date();
+        const nextSession = utilities.nextSessionDate(currentDate);
+        // Explanations content
         if (utilities.dateExpiredP(2050, 0, 1)) {
             const form = document.querySelector('form');
             form.style.visibility = 'visible';
             form.addEventListener('focusin', formUtilities.greenLight);
             form.addEventListener('focusout', formUtilities.checkValidity);
             form.oninput = formUtilities.checkValidity;
-            DOMConstruction.writeLines(sentences.after, explanations);
+            DOMConstruction.writeLines(sentences.before, explanations);
         } else {
             DOMConstruction.writeLines(sentences.after, explanations);
         }
-        DOMConstruction.countDown();
+
+        // Check if session ON AIR
+        if (currentDate >= nextSession && currentDate <= utilities.nextSessionDate(currentDate, 'hourEndString')) {
+            const sessionAnnoucement = document.getElementById('session');
+            sessionAnnoucement.textContent = "La séance actuelle se termine dans:";
+            DOMConstruction.countDown(utilities.currentSessionEnd(currentDate));
+        } else {
+            DOMConstruction.countDown(nextSession);
+        }
     });
 
     const DOMConstruction = {
-        countDown: () => {
+        countDown: (expectedDate) => {
             setInterval(() => {
-                const leftTime = utilities.computeLeftTime();
+                const leftTime = utilities.computeLeftTime(expectedDate);
                 Object.keys(leftTime).forEach(key => {
                     const parent = document.querySelector(`.${key}`);
                     const p = parent.children[1];
@@ -68,15 +78,14 @@
     };
 
     const utilities = {
-        computeLeftTime: () => {
+        computeLeftTime: (expectedDate) => {
             const dateNow = new Date();
-            const OPENDATE = new Date(`${utilities.findNextDay(dateNow)}, ${dates.year()} ${dates.hour}`);
-            let secondsLast = Math.floor((OPENDATE - dateNow) / 1000);
-            const days = Math.floor(secondsLast / 60 / 60 / 24);
+            let secondsLast = ~~((expectedDate - dateNow) / 1000);
+            const days = ~~(secondsLast / 60 / 60 / 24);
             secondsLast -= days * 24 * 60 * 60;
-            const hours = Math.floor(secondsLast / 60 / 60);
+            const hours = ~~(secondsLast / 60 / 60);
             secondsLast -= hours * 60 * 60;
-            const minutes = Math.floor(secondsLast / 60);
+            const minutes = ~~(secondsLast / 60);
             secondsLast -= minutes * 60;
             return {
                 days: days,
@@ -86,9 +95,15 @@
             };
         },
 
-        findNextDay: (now) => {
-            return dates.day.find(d => new Date(`${d}, ${dates.year()} ${dates.hour}`) > now);
+        nextSessionDate: (now, time = 'hourBegin') => new Date(`${utilities.nextSessionDay(now)}, ${sessionsDates.year()} ${sessionsDates[time]}`),
+
+        nextSessionDay: (now) => {
+            return sessionsDates.sessions.find(d => new Date(`${d}, ${sessionsDates.year()} ${sessionsDates.hourBegin}`) > now);
         },
+        currentSessionEnd: (now) => {
+            return new Date(now.getFullYear(), now.getMonth(), now.getDate(), sessionsDates.hourEndObj.hours, sessionsDates.hourEndObj.minutes, sessionsDates.hourEndObj.seconds);
+        },
+
 
         dateExpiredP: (year, month, day) => {
             const currentDate = new Date();
@@ -97,18 +112,6 @@
         },
     };
 
-    const sentences = {
-        before: ['Hello World!',
-            "Vous êtes bien sur le site du PasteurCodeClub du collège de Raon.",
-            "A partir du 1er janvier, vous pourrez demander votre inscription sur ce site.",
-            "A très bientôt!",
-            "Bonnes vacances à tous!",
-        ],
-        after: ['Hello World!',
-            "Ici, une dizaine d'élèves du collège apprennent à coder en javascript...",
-            "Happy Coding!"
-        ]
-    };
 
     const formUtilities = {
         removeLight: (el, color) => {
@@ -145,11 +148,30 @@
         validP: el => el.validity.valid,
     };
 
-    const dates = {
+    const sessionsDates = {
         year: () => new Date().getFullYear(),
-        hour: '12:30:00',
-        day: ['January 22', 'January 29', 'February 5', 'Frebruary 26', 'March 5', 'March 12', 'March 19', 'March 26']
+        hourBegin: '12:30:00',
+        hourEndString: '13:15:00',
+        hourEndObj: {
+            hours: 13,
+            minutes: 15,
+            seconds: 0
+        },
+        sessions: ['January 22', 'January 29', 'February 5', 'Frebruary 26', 'March 5', 'March 12', 'March 19', 'March 26'],
+        signIn: '1er Janvier',
     }
 
+    const sentences = {
+        before: ['Hello World!',
+            "Vous êtes bien sur le site du PasteurCodeClub du collège de Raon.",
+            `A partir du ${sessionsDates.signIn}, vous pourrez demander votre inscription sur ce site.`,
+            "A très bientôt!",
+            "Bonnes vacances à tous!",
+        ],
+        after: ['Hello World!',
+            "Ici, une dizaine d'élèves du collège apprennent à coder en javascript...",
+            "Happy Coding!"
+        ],
+    };
 
 }());
