@@ -101,6 +101,7 @@
             "Bonnes vacances à tous!",
         ],
         after: ['Hello World!',
+            "Ici, une dizaine d'élèves du collège apprennent à coder en javascript...",
             "Happy Coding!"
         ]
     };
@@ -139,4 +140,6 @@
 
         validP: el => el.validity.valid,
     };
+
+
 }());
