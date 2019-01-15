@@ -102,6 +102,7 @@
         ],
         after: ['Hello World!',
             "C'est parti!",
+            "Pour commencer, cliquez sur le lien qui se trouve plus bas sur cette page.",
             "Happy Coding!"
         ]
     };
