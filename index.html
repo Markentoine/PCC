@@ -10,6 +10,23 @@
     <link rel="stylesheet" type="text/css" media="screen" href="./style/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./style/main.css" />
     <script src="main.js"></script>
+    <script type="text/x-handlebars-template">
+            <form action="" name="signIn" method='POST' netlify-honeypot="bot-field" data-netlify="true" novalidate>
+                <input name="bot-field" /></label>
+                <div class="infos">
+                    <input type="text" placeholder="NOM" id="lastName" name="lastName" pattern="[A-Za-z]+" required autofocus>
+                    <input type="text" placeholder="PRENOM" id="firstName" name="firstName" pattern="[A-Za-z]+" required>
+                    <select name="division" id="division">
+                        <option value="5B">5B</option>
+                        <option value="4D">4D</option>
+                        <option value="4E">4E</option>
+                    </select>
+                </div>
+                <div class="captcha" data-netlify-recaptcha="true"></div>
+                <div class="mail"><input id="email" type="email" placeholder="exemple@mail.com"></div>
+                <input type="submit" value="Je voudrais m'inscrire">
+            </form>
+        </script>
 </head>
 
 <body>
@@ -21,22 +38,6 @@
         <div class="explanations">
             <span class="blinking">_</span>
         </div>
-        <form action="" name="signIn" method='POST' netlify-honeypot="bot-field" data-netlify="true" novalidate>
-            <input name="bot-field" /></label>
-            <div class="infos">
-                <input type="text" placeholder="NOM" id="lastName" name="lastName" pattern="[A-Za-z]+" required
-                    autofocus>
-                <input type="text" placeholder="PRENOM" id="firstName" name="firstName" pattern="[A-Za-z]+" required>
-                <select name="division" id="division">
-                    <option value="5B">5B</option>
-                    <option value="4D">4D</option>
-                    <option value="4E">4E</option>
-                </select>
-            </div>
-            <div class="captcha" data-netlify-recaptcha="true"></div>
-            <div class="mail"><input id="email" type="email" placeholder="exemple@mail.com"></div>
-            <input type="submit" value="Je voudrais m'inscrire">
-        </form>
         <a href="https://www.code3dgames.com/3de/">Cliquez ici pour commencer</a>
     </main>
 
