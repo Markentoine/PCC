@@ -3,7 +3,7 @@
     document.addEventListener("DOMContentLoaded", function (e) {
         const explanations = document.querySelector(".explanations");
 
-        if (utilities.dateExpiredP(2020, 0, 1)) {
+        if (utilities.dateExpiredP(2050, 0, 1)) {
             const form = document.querySelector('form');
             form.style.visibility = 'visible';
             form.addEventListener('focusin', formUtilities.greenLight);
@@ -11,7 +11,7 @@
             form.oninput = formUtilities.checkValidity;
             DOMConstruction.writeLines(sentences.after, explanations);
         } else {
-            DOMConstruction.writeLines(sentences.before, explanations);
+            DOMConstruction.writeLines(sentences.after, explanations);
         }
         DOMConstruction.countDown();
     });
