@@ -12,17 +12,18 @@
             form.addEventListener('focusout', formUtilities.checkValidity);
             form.oninput = formUtilities.checkValidity;
             DOMConstruction.writeLines(sentences.before, explanations);
-        } else {
-            DOMConstruction.writeLines(sentences.after, explanations);
-        }
-
+        } 
         // Check if session ON AIR
         if (currentDate >= nextSession && currentDate <= utilities.nextSessionDate(currentDate, 'hourEndString')) {
             const sessionAnnoucement = document.getElementById('session');
+            const title = document.getElementById('title');
+            title.textContent = 'PASTEURCODECLUB#ON AIR';
             sessionAnnoucement.textContent = "La séance actuelle se termine dans:";
             DOMConstruction.countDown(utilities.currentSessionEnd(currentDate));
+            DOMConstruction.writeLines(sentences.during, explanations);
         } else {
             DOMConstruction.countDown(nextSession);
+            DOMConstruction.writeLines(sentences.after, explanations);
         }
     });
 
@@ -166,12 +167,14 @@
             "Vous êtes bien sur le site du PasteurCodeClub du collège de Raon.",
             `A partir du ${sessionsDates.signIn}, vous pourrez demander votre inscription sur ce site.`,
             "A très bientôt!",
-            "Bonnes vacances à tous!",
         ],
         after: ['Hello World!',
             "Ici, une dizaine d'élèves du collège apprennent à coder en javascript...",
             "Happy Coding!"
         ],
+        during: ['Bienvenue à cette nouvelle session!',
+                  'Continuons notre exploration!',
+                'Happy Coding!'],
     };
 
 }());
