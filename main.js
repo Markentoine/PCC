@@ -69,8 +69,8 @@
 
     const utilities = {
         computeLeftTime: () => {
-            const OPENDATE = new Date('January 22, 2019 12:30:00');
             const dateNow = new Date();
+            const OPENDATE = new Date(`${utilities.findNextDay(dateNow)}, ${dates.year()} ${dates.hour}`);
             let secondsLast = Math.floor((OPENDATE - dateNow) / 1000);
             const days = Math.floor(secondsLast / 60 / 60 / 24);
             secondsLast -= days * 24 * 60 * 60;
@@ -84,6 +84,10 @@
                 minutes: minutes,
                 seconds: secondsLast,
             };
+        },
+
+        findNextDay: (now) => {
+            return dates.day.find(d => new Date(`${d}, ${dates.year()} ${dates.hour}`) > now);
         },
 
         dateExpiredP: (year, month, day) => {
@@ -140,6 +144,12 @@
 
         validP: el => el.validity.valid,
     };
+
+    const dates = {
+        year: () => new Date().getFullYear(),
+        hour: '12:30:00',
+        day: ['January 22', 'January 29', 'February 5', 'Frebruary 26', 'March 5', 'March 12', 'March 19', 'March 26']
+    }
 
 
 }());
