@@ -5,16 +5,14 @@
         const currentDate = new Date();
         const nextSession = utilities.nextSessionDate(currentDate);
         // Explanations content
-        if (utilities.dateExpiredP(2050, 0, 1)) {
+        if (utilities.dateExpiredP(sessionsDates.signinBegin) && currentDate <= sessionsDates.signinEnd) {
             const form = document.querySelector('form');
             form.style.visibility = 'visible';
             form.addEventListener('focusin', formUtilities.greenLight);
             form.addEventListener('focusout', formUtilities.checkValidity);
             form.oninput = formUtilities.checkValidity;
             DOMConstruction.writeLines(sentences.before, explanations);
-        } 
-        // Check if session ON AIR
-        if (currentDate >= nextSession && currentDate <= utilities.nextSessionDate(currentDate, 'hourEndString')) {
+        } else if (currentDate >= nextSession && currentDate <= utilities.nextSessionDate(currentDate, 'hourEndString')) {
             const sessionAnnoucement = document.getElementById('session');
             const title = document.getElementById('title');
             title.textContent = 'PASTEURCODECLUB#ON AIR';
@@ -106,11 +104,7 @@
         },
 
 
-        dateExpiredP: (year, month, day) => {
-            const currentDate = new Date();
-            const toCheckDate = new Date(year, month, day);
-            return currentDate >= toCheckDate;
-        },
+        dateExpiredP: date => new Date() >= date,
     };
 
 
@@ -150,6 +144,8 @@
     };
 
     const sessionsDates = {
+        signinBegin: new Date('January 1, 2019'),
+        signinEnd: new Date('January 14, 2019'),
         year: () => new Date().getFullYear(),
         hourBegin: '12:30:00',
         hourEndString: '13:15:00',
@@ -173,8 +169,9 @@
             "Happy Coding!"
         ],
         during: ['Bienvenue à cette nouvelle session!',
-                  'Continuons notre exploration!',
-                'Happy Coding!'],
+            'Continuons notre exploration!',
+            'Happy Coding!'
+        ],
     };
 
 }());
