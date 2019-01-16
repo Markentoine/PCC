@@ -4,7 +4,9 @@
         const explanations = document.querySelector(".explanations");
         const currentDate = new Date();
         const nextSession = utilities.nextSessionDate(currentDate);
-        // Explanations content
+
+        // Explanations content according to date
+        
         if (utilities.dateExpiredP(sessionsDates.signinBegin) && currentDate <= sessionsDates.signinEnd) {
             const form = document.querySelector('form');
             form.style.visibility = 'visible';
