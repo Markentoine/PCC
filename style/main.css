@@ -176,6 +176,11 @@ a {
     border: 3px solid red;
 }
 
+code {
+    width: 50vw;
+    border: 1px solid yellowgreen;
+}
+
 @keyframes blinking {
     0% {
         color: black
