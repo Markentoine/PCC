@@ -1,5 +1,6 @@
 (function () {
     'use strict'
+
     document.addEventListener("DOMContentLoaded", function (e) {
         const explanations = document.querySelector(".explanations");
         const currentDate = new Date();
@@ -150,7 +151,7 @@
         signinEnd: new Date('January 14, 2019'),
         year: () => new Date().getFullYear(),
         hourBegin: '12:30:00',
-        hourEndString: '13:15:00',
+        hourEnd: '13:15:00',
         hourEndObj: {
             hours: 13,
             minutes: 15,
