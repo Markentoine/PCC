@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="./style/main.css" />
     <script src="main.js"></script>
     <script type="text/x-handlebars-template">
-            <form action="" name="signIn" method='POST' netlify-honeypot="bot-field" data-netlify="true" novalidate>
+        <form action="" name="signIn" method='POST' netlify-honeypot="bot-field" data-netlify="true" novalidate>
                 <input name="bot-field" /></label>
                 <div class="infos">
                     <input type="text" placeholder="NOM" id="lastName" name="lastName" pattern="[A-Za-z]+" required autofocus>
@@ -38,12 +38,27 @@
         <div class="explanations">
             <span class="blinking">_</span>
         </div>
-    
+        <a href="https://www.code3dgames.com/3de/">Cliquez ici pour commencer</a>
+        <p>Code de la semaine passée</p>
+        <code contenteditable="true">
+            var shape = new THREE.SphereGeometry(100, 100, 100 );
+              var cover = new THREE.MeshNormalMaterial(flat);
+              var ball = new THREE.Mesh(shape, cover);
+              scene.add(ball);
+              ball.position.set(-250, 250, -250);
+
+              var shape2 = new THREE.CubeGeometry(300, 100, 100);
+              var cover2 = new THREE.MeshNormalMaterial(flat);
+              var box = new THREE.Mesh(shape2, cover2);
+              scene.add(box);
+              box.rotation.set(1, 1, 0);
+        </code>
+
     </main>
 
     <footer>
         <div class="container">
-            <p id="session">Prochaine séance dans : </p>
+            <p id="session">Prochaine séance dans: </p>
             <div class="days">
                 <span></span>
                 <p>_Jours</p>
