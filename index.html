@@ -32,51 +32,62 @@
 <body>
     <header>
         <p id="title">PASTEURCODECLUB</p>
-        <a href="https://www.code3dgames.com/3de/">>>Cliquez ici pour commencer<<</a>
-    </header>
+        <a href="https://www.code3dgames.com/3de/">>>Cliquez ici pour commencer<<</a> </header> <main>
+                <div class="explanations">
+                    <span class="blinking">_</span>
+                </div>
+                <div class="setup lessons">
+                    <h1>1. Commencer à coder</h1>
+                    <p>Quand vous aurez clické sur "cliquez pour commencer" en haut à droite de cette page, voici
+                        l'interface dans laquelle
+                        vous coderez. (voir image ci-dessous)</p>
+                    <p>Vous écrirez votre code après la ligne 21</p>
+                    <div class="screenshot" id="setup">
+                        <img src="./assets/screenshots/genralsetup.jpg" alt="coding interface">
+                    </div>
+                </div>
+                <div class="sphere lessons">
+                    <h1>2. Creer des sphères</h1>
+                    <p>Pour créer des balles, des sphères, nous avons besoin:</p>
+                    <ul>
+                        <li>>>D'une recette que nous allons aller dénicher dans un livre de recettes appelé THREE.</li>
+                        <li>>>D'une surface pour la recouvrir.</li>
+                    </ul>
+                    <p>C'est parti! Dans la partie code vous pouvez recopier (sans copier-coller!!!) ces lignes:</p>
+                    <p>var recetteDeBalle = new THREE.SphereGeometry(150);</p>
+                    <p>var surface = new THREE.MeshNormalMaterial(flat);</p>
+                    <p>var maPremiereBalle = new THREE.Mesh(recetteDeBalle, surface);</p>
+                    <p>scene.add(maPremiereBalle);</p>
+                    <p>Voila ce que vous devriez voir apparaitre (cliquez sur 'HIDE CODE')</p>
+                    <div class="screenshot">
+                        <img src="./assets/screenshots/premiereBalle.jpg" alt="">
+                    </div>
 
-    <main>
-        <div class="explanations">
-            <span class="blinking">_</span>
-        </div>
-        <div class="setup lessons">
-            <h1>1. Commencer à coder</h1>
-<p>Quand vous aurez clické sur "cliquez pour commencer" en haut à droite de cette page, voici l'interface dans laquelle
-    vous coderez. (voir image ci-dessous)</p>
-            <p>Vous écrirez votre code après la ligne 21</p>
-            <br>
-            <div class="screenshot" id="setup">
-                <img src="./assets/screenshots/genralsetup.jpg" alt="coding interface">
-            </div>
-        </div>
-        <div class="sphere lessons">
-            <h1>2. Creer des sphères</h1>
+                </div>
 
-        </div>
+                </main>
 
-    </main>
-
-    <footer>
-        <div class="container">
-            <p id="session">Prochaine séance dans: </p>
-            <div class="days">
-                <span></span>
-                <p>_Jours</p>
-            </div>
-            <div class="hours">
-                <span></span>
-                <p>_Heures</p>
-            </div>
-            <div class="minutes">
-                <span></span>
-                <p>_Minutes</p>
-            </div>
-            <div class="seconds">
-                <span></span>
-                <p>_Secondes</p>
-            </div>
-        </div>
-    </footer>
+                <footer>
+                    <div class="container">
+                        <p id="session">Prochaine séance dans: </p>
+                        <div class="days">
+                            <span></span>
+                            <p>_Jours</p>
+                        </div>
+                        <div class="hours">
+                            <span></span>
+                            <p>_Heures</p>
+                        </div>
+                        <div class="minutes">
+                            <span></span>
+                            <p>_Minutes</p>
+                        </div>
+                        <div class="seconds">
+                            <span></span>
+                            <p>_Secondes</p>
+                        </div>
+                    </div>
+                </footer>
 </body>
 
 </html>
