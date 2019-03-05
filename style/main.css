@@ -26,13 +26,14 @@ body {
 }
 
 header {
-    /*position: fixed;*/
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100vw;
     height: 10vh;
     font-family: 'Monoton', Helvetica, sans-serif;
+    background-color: black;
     border-bottom: 2px dotted chartreuse;
     margin-left: .5rem;
 }
@@ -45,6 +46,7 @@ main {
     display: flex;
     flex-direction: column;
     width: 98vw;
+    margin-top: 10vh;
 
     margin-left: 1rem;
 }
