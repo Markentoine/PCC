@@ -205,6 +205,10 @@ img {
     margin-left: 4vw;
 }
 
+#boiteDecalee, #boitePenchee {
+    width: 40vw;
+}
+
 .lessons {
     margin-left: 2rem;
 }
