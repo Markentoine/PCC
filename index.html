@@ -37,31 +37,50 @@
                     <span class="blinking">_</span>
                 </div>
                 <div class="setup lessons">
-                    <h1>1. Commencer à coder</h1>
+                    <h1>1. COMMENCER A CODER</h1>
                     <p>Quand vous aurez clické sur "cliquez pour commencer" en haut à droite de cette page, voici
                         l'interface dans laquelle
-                        vous coderez. (voir image ci-dessous)</p>
+                        vous coderez.</p>
+                    <p>(voir image ci-dessous)</p>
                     <p>Vous écrirez votre code après la ligne 21</p>
                     <div class="screenshot" id="setup">
                         <img src="./assets/screenshots/genralsetup.jpg" alt="coding interface">
                     </div>
                 </div>
                 <div class="sphere lessons">
-                    <h1>2. Creer des sphères</h1>
+                    <h1>2. DESSINONS UNE BALLE</h1>
                     <p>Pour créer des balles, des sphères, nous avons besoin:</p>
                     <ul>
-                        <li>>>D'une recette que nous allons aller dénicher dans un livre de recettes appelé THREE.</li>
+                        <li>>>D'une recette que nous allons aller dénicher dans un livre de recettes appelé THREE. On
+                            peut aussi dire que c'est un livre de formules magiques.</li>
                         <li>>>D'une surface pour la recouvrir.</li>
                     </ul>
                     <p>C'est parti! Dans la partie code vous pouvez recopier (sans copier-coller!!!) ces lignes:</p>
-                    <p>var recetteDeBalle = new THREE.SphereGeometry(150);</p>
-                    <p>var surface = new THREE.MeshNormalMaterial(flat);</p>
-                    <p>var maPremiereBalle = new THREE.Mesh(recetteDeBalle, surface);</p>
-                    <p>scene.add(maPremiereBalle);</p>
+                    <div class="code">
+                        <p>var recetteDeBalle = new THREE.SphereGeometry(150);</p>
+                        <p>var surface = new THREE.MeshNormalMaterial(flat);</p>
+                        <p>var maPremiereBalle = new THREE.Mesh(recetteDeBalle, surface);</p>
+                        <p>scene.add(maPremiereBalle);</p>
+                    </div>
+                    <p>Ces lignes doivent vous apparaitre comme des formules de sorcellerie: c'est un peu ça coder! ;)</p>
                     <p>Voila ce que vous devriez voir apparaitre (cliquez sur 'HIDE CODE')</p>
-                    <div class="screenshot">
+                    <div class="screenshot" id="premiereBalle">
                         <img src="./assets/screenshots/premiereBalle.jpg" alt="">
                     </div>
+                    <p>Cette balle est simple. Vous voyez qu'elle est faite de rectangles et qu'elle n'est donc pas
+                        vraiment belle car elle n'est pas lisse.</p>
+                    <p>Essayez maintenant de remplacer le nombre 150 par 50. Que se passe-t-il?</p>
+                    <p>Remplacez-le encore par d'autres nombres! Coder c'est essayer!</p>
+                    <p>On peut rendre cette balle plus lisse en ajoutant quelques nombres (des paramètres).</p>
+                    <p>Modifier votre code ainsi:</p>
+                    <div class="code">
+                        <p>var recetteDeBalle = new THREE.SphereGeometry(150, 30, 20);</p>
+                    </div>
+                    <p>C'est mieux, non?</p>
+                    <div class="screenshot" id="ballePlusLisse">
+                        <img src="./assets/screenshots/ballepluslisse.jpg" alt="">
+                    </div>
+
 
                 </div>
 

@@ -12,6 +12,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: black;
+    width: 100vw;
     color: chartreuse;
     font-size: calc(8px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
     line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
@@ -43,7 +44,7 @@ header p {
 main {
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 98vw;
 
     margin-left: 1rem;
 }
@@ -179,11 +180,29 @@ code {
 
 .screenshot {
     width: 90vw;
+    margin: 3rem 0;
     
+}
+
+.code {
+    border: 1px solid chartreuse;
+    color: black;
+    background-color: whitesmoke;
+    width: 60vw;
+    margin: 2rem 0
 }
 
 img {
     width: 100%;
+}
+
+#premiereBalle {
+    width: 30vw;
+}
+
+#ballePlusLisse {
+    width: 20vw;
+    margin-left: 4vw;
 }
 
 .lessons {
