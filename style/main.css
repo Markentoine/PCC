@@ -1,6 +1,5 @@
 html {
     box-sizing: border-box;
-    height: 100%;
 }
 
 *,
@@ -12,8 +11,6 @@ html {
 body {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: inherit;
     background-color: black;
     color: chartreuse;
     font-size: calc(8px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
@@ -27,16 +24,13 @@ body {
     animation: blinking .8s infinite;
 }
 
-.line {
-    display: flex;
-}
-
 header {
+    /*position: fixed;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100vw;
-    height: 10%;
+    height: 10vh;
     font-family: 'Monoton', Helvetica, sans-serif;
     border-bottom: 2px dotted chartreuse;
     margin-left: .5rem;
@@ -48,9 +42,9 @@ header p {
 
 main {
     display: flex;
-    height: 80%;
-    width: 100vw;
     flex-direction: column;
+    width: 100vw;
+
     margin-left: 1rem;
 }
 
@@ -145,10 +139,11 @@ input[type="submit"] {
 }
 
 footer {
+    /*position: fixed;*/
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 10%;
+    height: 10vh;
     border-top: 2px dotted chartreuse;
     margin-left: .5rem;
 }
@@ -182,6 +177,27 @@ code {
     border: 1px solid yellowgreen;
 }
 
+.screenshot {
+    width: 90vw;
+    
+}
+
+img {
+    width: 100%;
+}
+
+.lessons {
+    margin-left: 2rem;
+}
+
+.lessons p {
+    margin-left: 2rem;
+}
+
+h1 {
+    font-size: 1.5rem;
+    padding: 1rem;
+}
 @keyframes blinking {
     0% {
         color: black

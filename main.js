@@ -168,7 +168,7 @@
             "A très bientôt!",
         ],
         after: ['Hello World!',
-            "Ici, une dizaine d'élèves du collège apprennent à coder en javascript...",
+            "Vous pouvez retrouver sur cette page ce que nous avons vu ensemble!",
             "Happy Coding!"
         ],
         during: ['Bienvenue à cette nouvelle session!',
