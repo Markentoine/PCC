@@ -211,7 +211,9 @@ img {
     margin-left: 4vw;
 }
 
-#boiteDecalee, #boitePenchee {
+#boiteDecalee, 
+#boitePenchee,
+ {
     width: 40vw;
 }
 

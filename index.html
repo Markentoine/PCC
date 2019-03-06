@@ -132,7 +132,7 @@
                         <p>var recetteDeTube = new THREE.CylinderGeometry(30, 30, 100);</p>
                     </div>
                     <p>En vous inspirant de ce que nous avons déjà vu, à vous de créer: monPremierTube!</p>
-                    <p>Allez sorcier! Essayez de le faire apparaître à l'écran!</p>
+                    <p>Allez sorciers! Essayez de le faire apparaître à l'écran!</p>
                     <p>Abracadabra!!!</p>
                     <p>Petit conseil: N'oubliez pas qu'il peut se cacher dans la balle...</p>
                     <p>Vous devriez voir quelque chose comme ça:</p>
@@ -146,6 +146,47 @@
                         <p>scene.add(monPremierTube);</p>
                         <p>monPremierTube.position.set(-300, 0, 0);</p>
                     </div>
+                    <p>Un peu d'entrainement. En créant deux autres formes à l'aide de la recette de tubes, reproduisez
+                        ce que vous voyez ci-dessous</p>
+                    <p>--! NE REGARDEZ PAS LA SOLUTION AVANT D'AVOIR VRAIMENT EXPERIMENTE DES SOLUTIONS !--</p>
+                    <div class="screenshot">
+                        <img src="./assets/screenshots/troisTubes.jpg" id="troisTubes" alt="">
+                    </div>
+                    <p>Vous avez réussi? Bravo!</p>
+                    <p>Solution:</p>
+                    <div class="code">
+                        <p>var recetteDeDisque = new THREE.CylinderGeometry(50, 50, 1);</p>
+                        <p>var monPremierDisque = new THREE.Mesh(recetteDeDisque, surface);</p>
+                        <p>scene.add(monPremierDisque);</p>
+                        <p>monPremierDisque.position.set(0, 200, 0);</p>
+                        <br>
+                        <p>var recetteDeCone = new THREE.CylinderGeometry(1, 50, 40);</p>
+                        <p>var recetteDeCone = new THREE.CylinderGeometry(1, 50, 40);</p>
+                        <p>var recetteDeCone = new THREE.CylinderGeometry(1, 50, 40);</p>
+                        <p>monPremierCone.position.set(0, -200, 0);</p>
+                    </div>
+                    <p>Dans la recette du tube, vous avez remarqué les trois chiffres entre parenthèses? Changez-les et
+                        devinez ce que chacun d'entre eux change.</p>
+                    <p>Vous pouvez en ajouter un 4e! Que se passe-t-il alors?</p>
+                    <p>A l'aide de ce quatrième chiffre, votre but est désormais de construire une pyramide!</p>
+                    <p>A vous de jouer!</p>
+                    <p>Voilà quel devrait être le résultat final:</p>
+                    <div class="screenshot">
+                        <img src="./assets/screenshots/pyramide.jpg" id="pyramide" alt="pyramide">
+                    </div>
+                    <p>Placez cette pyramide à l'endroit où je l'ai mise en jouant avec les paramètres de position et
+                        de rotation.</p>
+                    <p>--! NE REGARDEZ PAS LA SOLUTION AVANT D'AVOIR VRAIMENT EXPERIMENTE DES SOLUTIONS !--</p>
+                    <p>SOLUTION</p>
+                    <div class="code">
+                        <p>var recetteDePyramide = new THREE.CylinderGeometry(1, 50, 20, 4);</p>
+                        <p>var maPremierePyramide = new THREE.Mesh(recetteDePyramide, surface);</p>
+                        <p>scene.add(maPremierePyramide);</p>
+                        <p>maPremierePyramide.position.set(-170, 150, 50);</p>
+                        <p>maPremierePyramide.rotation.set(1, 0, 0);</p>
+                    </div>
+
+
                 </div>
 
                 </main>
