@@ -187,7 +187,7 @@ code {
 .screenshot {
     width: 90vw;
     margin: 3rem 0;
-    
+
 }
 
 .code {
@@ -211,9 +211,8 @@ img {
     margin-left: 4vw;
 }
 
-#boiteDecalee, 
-#boitePenchee,
- {
+#boiteDecalee,
+#boitePenchee {
     width: 40vw;
 }
 
@@ -232,10 +231,12 @@ ul {
 li {
     padding-left: 1rem;
 }
+
 h1 {
     font-size: 1.5rem;
     padding: 1rem;
 }
+
 @keyframes blinking {
     0% {
         color: black
