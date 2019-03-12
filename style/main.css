@@ -179,11 +179,35 @@ a {
     border: 3px solid red;
 }
 
-code {
-    width: 50vw;
-    border: 1px solid yellowgreen;
+.reveal {
+
 }
 
+button {
+    text-decoration: none;
+    border: none;
+    padding: .5rem;
+    background-color: green;
+    color: black;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+    transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin: 1rem;
+}
+
+button:hover,
+button:focus {
+    background-color: chartreuse;
+}
+
+button:focus {
+    border: .1rem solid blue;
+}
 .screenshot {
     width: 90vw;
     margin: 3rem 0;
@@ -191,11 +215,12 @@ code {
 }
 
 .code {
-    border: 1px solid chartreuse;
+    border: .3rem solid chartreuse;
     color: black;
     background-color: whitesmoke;
     width: 60vw;
-    margin: 2rem 0
+    margin: 2rem 0;
+    display: none;
 }
 
 img {

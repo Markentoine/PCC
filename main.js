@@ -7,7 +7,7 @@
         const nextSession = utilities.nextSessionDate(currentDate);
 
         // Explanations content according to date
-        
+
         if (utilities.dateExpiredP(sessionsDates.signinBegin) && currentDate <= sessionsDates.signinEnd) {
             const form = document.querySelector('form');
             form.style.visibility = 'visible';
@@ -26,10 +26,25 @@
             DOMConstruction.countDown(nextSession);
             DOMConstruction.writeLines(sentences.after, explanations);
         }
+
+        // event listeners
+        document.addEventListener('click', function (e) {
+            const target = e.target;
+            if (target.className === 'reveal') {
+                let codeStatus = target.nextElementSibling.style.display;
+                target.nextElementSibling.style.display = codeStatus === 'block' ? 'none' : 'block';
+            }
+        })
+
     });
 
+    const events = {
+
+
+    };
+
     const DOMConstruction = {
-        countDown: (expectedDate) => {
+        countDown: expectedDate => {
             setInterval(() => {
                 const leftTime = utilities.computeLeftTime(expectedDate);
                 Object.keys(leftTime).forEach(key => {

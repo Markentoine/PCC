@@ -59,6 +59,7 @@
                         <li>>>D'une surface pour la recouvrir.</li>
                     </ul>
                     <p>C'est parti! Dans la partie code vous pouvez recopier (sans copier-coller!!!) ces lignes:</p>
+                    <button class='reveal'>VOIR LE CODE</button>
                     <div class="code">
                         <p>var recetteDeBalle = new THREE.SphereGeometry(150);</p>
                         <p>var surface = new THREE.MeshNormalMaterial(flat);</p>
@@ -76,6 +77,7 @@
                     <p>Remplacez-le encore par d'autres nombres! Coder c'est essayer!</p>
                     <p>On peut rendre cette balle plus lisse en ajoutant quelques nombres (des paramètres).</p>
                     <p>Modifier votre code ainsi:</p>
+                    <button class='reveal'>VOIR LE CODE</button>
                     <div class="code">
                         <p>var recetteDeBalle = new THREE.SphereGeometry(150, 30, 20);</p>
                     </div>
@@ -90,6 +92,7 @@
                     <p>Cette fois encore, nous allons ouvrir notre bibliothèque THREE et y chercher la formule pour
                         créer des boîtes.</p>
                     <p>La voici! Vous pouvez la rajouter à votre code:</p>
+                    <button class='reveal'>VOIR LE CODE</button>
                     <div class="code">
                         <p>var recetteDeBoite = new THREE.CubeGeometry(100, 100, 100);</p>
                         <p>var maPremiereBoite = new THREE.Mesh(recetteDeBoite, surface);</p>
@@ -98,6 +101,7 @@
                     <p>Alors? Que se passe-t-il? Vous ne voyez pas votre boîte?</p>
                     <p>Normal! Elle est cachée par votre balle!</p>
                     <p>Déplaçons un peu cette boîte pour l'apercevoir:</p>
+                    <button class='reveal'>VOIR LE CODE</button>
                     <div class="code">
                         <p>maPremiereBoite.position.set(300, 0, 0);</p>
                     </div>
@@ -106,6 +110,7 @@
                         <img src="./assets/screenshots/sphereBoite.jpg" alt="boite decalee">
                     </div>
                     <p>Mais ça pourrait être mieux...En ajoutant ça:</p>
+                    <button class='reveal'>VOIR LE CODE</button>
                     <div class="code">
                         <p>maPremiereBoite.rotation.set(0.5, 0, 0);</p>
                     </div>
@@ -128,6 +133,7 @@
                     <h1>4// DES TUBES DE TOUTES LES FORMES</h1>
                     <p>Construisons maintenant des tubes</p>
                     <p>Je vous donne la recette:</p>
+                    <button class='reveal'>VOIR LE CODE</button>
                     <div class="code">
                         <p>var recetteDeTube = new THREE.CylinderGeometry(30, 30, 100);</p>
                     </div>
@@ -140,6 +146,7 @@
                         <img src="./assets/screenshots/sphereBoiteTube.jpg" alt="">
                     </div>
                     <p>Besoin d'aide?</p>
+                    <button class='reveal'>VOIR LE CODE</button>
                     <div class="code">
                         <p>var recetteDeTube = new THREE.CylinderGeometry(30, 30, 100);</p>
                         <p>var monPremierTube = new THREE.Mesh(recetteDeTube, surface);</p>
@@ -148,12 +155,13 @@
                     </div>
                     <p>Un peu d'entrainement. En créant deux autres formes à l'aide de la recette de tubes, reproduisez
                         ce que vous voyez ci-dessous</p>
-                    <p>--! NE REGARDEZ PAS LA SOLUTION AVANT D'AVOIR VRAIMENT EXPERIMENTE DES SOLUTIONS !--</p>
+                    <p>--! NE REGARDEZ PAS LA SOLUTION AVANT D'AVOIR VRAIMENT EXPERIMENTE VOS SOLUTIONS !--</p>
                     <div class="screenshot">
                         <img src="./assets/screenshots/troisTubes.jpg" id="troisTubes" alt="">
                     </div>
                     <p>Vous avez réussi? Bravo!</p>
                     <p>Solution:</p>
+                    <button class='reveal'>VOIR LE CODE</button>
                     <div class="code">
                         <p>var recetteDeDisque = new THREE.CylinderGeometry(50, 50, 1);</p>
                         <p>var monPremierDisque = new THREE.Mesh(recetteDeDisque, surface);</p>
@@ -176,8 +184,9 @@
                     </div>
                     <p>Placez cette pyramide à l'endroit où je l'ai mise en jouant avec les paramètres de position et
                         de rotation.</p>
-                    <p>--! NE REGARDEZ PAS LA SOLUTION AVANT D'AVOIR VRAIMENT EXPERIMENTE DES SOLUTIONS !--</p>
+                    <p>--! NE REGARDEZ PAS LA SOLUTION AVANT D'AVOIR VRAIMENT EXPERIMENTE VOS SOLUTIONS !--</p>
                     <p>SOLUTION</p>
+                    <button class='reveal'>VOIR LE CODE</button>
                     <div class="code">
                         <p>var recetteDePyramide = new THREE.CylinderGeometry(1, 50, 20, 4);</p>
                         <p>var maPremierePyramide = new THREE.Mesh(recetteDePyramide, surface);</p>
@@ -186,8 +195,98 @@
                         <p>maPremierePyramide.rotation.set(1, 0, 0);</p>
                     </div>
 
-                    <div class="planes">
-                        <h1>5// CONSTRUIRE UN TERRAIN PLAT</h1>
+                    <div class="planes lessons">
+                        <h1>5// CONSTRUIRE DES PLANS</h1>
+                        <p>Les plans sont bien utiles puisqu'ils vons nous permmettre de créer des terrains, des murs
+                            ou des portes dans nos jeux.</p>
+                        <p>Nouvelle formule magique à ajouter à notre répertoire: PlaneGeometry</p>
+                        <p>Utilisez cette formule magique et tenter de créer un terrain plat...</p>
+                        <p>Et comme d'habiture, testez vous-même, c'est le meilleur moyen d'apprendre!</p>
+                        <p>Avec certains réglages de position et de rotation, vous devriez pouvoir vous approcher de
+                            l'image ci-dessous</p>
+                        <p>--! NE REGARDEZ PAS LA SOLUTION AVANT D'AVOIR VRAIMENT EXPERIMENTE VOS SOLUTIONS !--</p>
+                        <div class="screenshot">
+                            <img src="./assets/screenshots/plan.jpg" alt="">
+                        </div>
+                        <p>Les quelques lignes de programme pour obtenir ce résultat:</p>
+                        <button class='reveal'>VOIR LE CODE</button>
+                        <div class="code">
+                            <p>var recetteDePlan = new THREE.PlaneGeometry(1000, 1000);</p>
+                            <p>var monPremierPlan = new THREE.Mesh(recetteDePlan, surface);</p>
+                            <p>scene.add(monPremierPlan);</p>
+                            <p>monPremierPlan.position.set(0, -300, 0);</p>
+                            <p>monPremierPlan.rotation.set(-1, 0, 0);</p>
+                        </div>
+                    </div>
+
+                    <div class="donuts lessons">
+                        <h1>6// MMM DES DONUTS!</h1>
+                        <p>Il nous reste à apprendre une dernière recette de forme simple: le donut!!!</p>
+                        <p>Le donut a un nom plus savant: le tore.</p>
+                        <p>C'est pourquoi la recette sera cette fois: TorusGeometry.</p>
+                        <p>Ajoutons cette dernière forme à notre ensemble de formes simples.</p>
+                        <p>A votre tour de reproduire ce résultat:</p>
+                        <div class="screenshot">
+                            <img src="./assets/screenshots/donut.jpg" alt="">
+                        </div>
+                        <p>--! NE REGARDEZ PAS LA SOLUTION AVANT D'AVOIR VRAIMENT EXPERIMENTE VOS SOLUTIONS !--</p>
+                        <p>INDICE: pour arrondir votre donut, ajoutez des paramètres (ces chiffres entre parenthèses)</p>
+                        <p>Vérifiez que vos lignes de code ressemblent bien à celles-là:</p>
+                        <div class="code">
+                            <p>var recetteDeDonut = new THREE.TorusGeometry(40, 10, 120, 100);</p>
+                            <p>var monPremierDonut = new THREE.Mesh(recetteDeDonut, surface);</p>
+                            <p>scene.add(monPremierDonut);</p>
+                            <p>monPremierDonut.position.set(200, 150, 0);</p>
+                        </div>
+                        <div class="lessons conclusion">
+                            <h1>7// QUE DE FORMES!</h1>
+                            <p>Finalement, voici le code qui nous a amené jusque là:</p>
+                            <button class='reveal'>VOIR LE CODE</button>
+                            <div class="code">
+                                <p>var recetteDeBalle = new THREE.SphereGeometry(150, 30, 20);</p>
+                                <p>var surface = new THREE.MeshNormalMaterial(flat);</p>
+                                <p>var maPremiereBalle = new THREE.Mesh(recetteDeBalle, surface);</p>
+                                <p>scene.add(maPremiereBalle);</p>
+                                <br>
+                                <p>var recetteDeBoite = new THREE.CubeGeometry(100, 100, 100);</p>
+                                <p>var maPremiereBoite = new THREE.Mesh(recetteDeBoite, surface);</p>
+                                <p>scene.add(maPremiereBoite);</p>
+                                <p>maPremiereBoite.position.set(300, 0, 0);</p>
+                                <p>maPremiereBoite.rotation.set(0.5, 6, 0);</p>
+                                <br>
+                                <p>var recetteDeTube = new THREE.CylinderGeometry(30, 30, 100);</p>
+                                <p>var monPremierTube = new THREE.Mesh(recetteDeTube, surface);</p>
+                                <p>scene.add(monPremierTube);</p>
+                                <p>monPremierTube.position.set(-300, 0, 0);</p>
+                                <br>
+                                <p>var recetteDeDisque = new THREE.CylinderGeometry(50, 50, 1);</p>
+                                <p>var monPremierDisque = new THREE.Mesh(recetteDeDisque, surface);</p>
+                                <p>scene.add(monPremierDisque);</p>
+                                <p>monPremierDisque.position.set(0, 200, 0);</p>
+                                <br>
+                                <p>var recetteDeCone = new THREE.CylinderGeometry(1, 50, 40);</p>
+                                <p>var monPremierCone = new THREE.Mesh(recetteDeCone, surface);</p>
+                                <p>scene.add(monPremierCone);</p>
+                                <p>monPremierCone.position.set(0, -200, 0);</p>
+                                <br>
+                                <p>var recetteDePyramide = new THREE.CylinderGeometry(1, 50, 20, 4);</p>
+                                <p>var maPremierePyramide = new THREE.Mesh(recetteDePyramide, surface);</p>
+                                <p>scene.add(maPremierePyramide);</p>
+                                <p>maPremierePyramide.position.set(-170, 150, 50);</p>
+                                <p>maPremierePyramide.rotation.set(1, 0, 0);</p>
+                                <br>
+                                <p>var recetteDePlan = new THREE.PlaneGeometry(1000, 1000);</p>
+                                <p>var monPremierPlan = new THREE.Mesh(recetteDePlan, surface);</p>
+                                <p>scene.add(monPremierPlan);</p>
+                                <p>monPremierPlan.position.set(0, -300, 0);</p>
+                                <p>monPremierPlan.rotation.set(-1, 0, 0);</p>
+                                <br>
+                                <p>var recetteDeDonut = new THREE.TorusGeometry(40, 10, 120, 100);</p>
+                                <p>var monPremierDonut = new THREE.Mesh(recetteDeDonut, surface);</p>
+                                <p>scene.add(monPremierDonut);</p>
+                                <p>monPremierDonut.position.set(200, 150, 0);</p>
+                            </div>
+                        </div>
                     </div>
 
 
