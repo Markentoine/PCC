@@ -291,7 +291,7 @@ li {
 
 h1 {
     font-size: 1.5rem;
-    padding: 1rem;
+    padding: .5rem;
 }
 
 @keyframes blinking {
