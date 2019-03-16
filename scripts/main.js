@@ -220,6 +220,7 @@
     };
 
     const routes = {
+        '/': Handlebars.templates.landing,
         '/index.html': Handlebars.templates.landing,
         '/balle': Handlebars.templates.balle,
         '/cube': Handlebars.templates.cube,
