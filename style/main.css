@@ -62,9 +62,18 @@ main {
 .explanations {
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 45vw;
     height: 15vh;
     margin-top: 1rem;
+}
+
+#rotateCube {
+    width: 45vw;
+}
+
+.presentation {
+    display: flex;
+    width: 98vw;
 }
 
 .line {
