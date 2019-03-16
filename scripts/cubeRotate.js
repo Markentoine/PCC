@@ -10,14 +10,14 @@ document.getElementById('rotateCube').appendChild(renderer.domElement);
 const geometry = new THREE.BoxGeometry(1, 1, 1);
 const material = new THREE.MeshNormalMaterial();
 const cube = new THREE.Mesh(geometry, material);
-cube.scale.set(2, 2, 2);
+cube.scale.set(2.5, 2.5, 2.5);
 scene.add(cube);
 camera.position.z = 5;
 
 const render = function () {
     requestAnimationFrame(render);
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.02;
+    cube.rotation.x += 0.008;
+    cube.rotation.y += 0.008;
     renderer.render(scene, camera);
 };
 render();
