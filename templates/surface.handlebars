@@ -1,0 +1,23 @@
+<div class="planes lessons">
+    <h1>CONSTRUIRE-DES-PLANS</h1>
+    <p>Les plans sont bien utiles puisqu'ils vons nous permmettre de créer des terrains, des murs
+        ou des portes dans nos jeux.</p>
+    <p>Nouvelle formule magique à ajouter à notre répertoire: PlaneGeometry</p>
+    <p>Utilisez cette formule magique et tenter de créer un terrain plat...</p>
+    <p>Et comme d'habiture, testez vous-même, c'est le meilleur moyen d'apprendre!</p>
+    <p>Avec certains réglages de position et de rotation, vous devriez pouvoir vous approcher de
+        l'image ci-dessous</p>
+    <p>--! NE REGARDEZ PAS LA SOLUTION AVANT D'AVOIR VRAIMENT EXPERIMENTE VOS SOLUTIONS !--</p>
+    <div class="screenshot">
+        <img src="./assets/screenshots/plan.jpg" alt="">
+    </div>
+    <p>Les quelques lignes de programme pour obtenir ce résultat:</p>
+    <button class='reveal'>VOIR LE CODE</button>
+    <div class="code">
+        <p>var recetteDePlan = new THREE.PlaneGeometry(1000, 1000);</p>
+        <p>var monPremierPlan = new THREE.Mesh(recetteDePlan, surface);</p>
+        <p>scene.add(monPremierPlan);</p>
+        <p>monPremierPlan.position.set(0, -300, 0);</p>
+        <p>monPremierPlan.rotation.set(-1, 0, 0);</p>
+    </div>
+</div>

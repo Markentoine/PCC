@@ -1,0 +1,49 @@
+<div class="lessons conclusion">
+    <h1>VOUS-ETES-MAINTENANT-EN-FORMES!</h1>
+    <p>Finalement, voici les lignes de  code pour toutes les formes vues:</p>
+    <button class='reveal'>VOIR LE CODE</button>
+    <div class="code">
+        <p>var recetteDeBalle = new THREE.SphereGeometry(150, 30, 20);</p>
+        <p>var surface = new THREE.MeshNormalMaterial(flat);</p>
+        <p>var maPremiereBalle = new THREE.Mesh(recetteDeBalle, surface);</p>
+        <p>scene.add(maPremiereBalle);</p>
+        <br>
+        <p>var recetteDeBoite = new THREE.CubeGeometry(100, 100, 100);</p>
+        <p>var maPremiereBoite = new THREE.Mesh(recetteDeBoite, surface);</p>
+        <p>scene.add(maPremiereBoite);</p>
+        <p>maPremiereBoite.position.set(300, 0, 0);</p>
+        <p>maPremiereBoite.rotation.set(0.5, 6, 0);</p>
+        <br>
+        <p>var recetteDeTube = new THREE.CylinderGeometry(30, 30, 100);</p>
+        <p>var monPremierTube = new THREE.Mesh(recetteDeTube, surface);</p>
+        <p>scene.add(monPremierTube);</p>
+        <p>monPremierTube.position.set(-300, 0, 0);</p>
+        <br>
+        <p>var recetteDeDisque = new THREE.CylinderGeometry(50, 50, 1);</p>
+        <p>var monPremierDisque = new THREE.Mesh(recetteDeDisque, surface);</p>
+        <p>scene.add(monPremierDisque);</p>
+        <p>monPremierDisque.position.set(0, 200, 0);</p>
+        <br>
+        <p>var recetteDeCone = new THREE.CylinderGeometry(1, 50, 40);</p>
+        <p>var monPremierCone = new THREE.Mesh(recetteDeCone, surface);</p>
+        <p>scene.add(monPremierCone);</p>
+        <p>monPremierCone.position.set(0, -200, 0);</p>
+        <br>
+        <p>var recetteDePyramide = new THREE.CylinderGeometry(1, 50, 20, 4);</p>
+        <p>var maPremierePyramide = new THREE.Mesh(recetteDePyramide, surface);</p>
+        <p>scene.add(maPremierePyramide);</p>
+        <p>maPremierePyramide.position.set(-170, 150, 50);</p>
+        <p>maPremierePyramide.rotation.set(1, 0, 0);</p>
+        <br>
+        <p>var recetteDePlan = new THREE.PlaneGeometry(1000, 1000);</p>
+        <p>var monPremierPlan = new THREE.Mesh(recetteDePlan, surface);</p>
+        <p>scene.add(monPremierPlan);</p>
+        <p>monPremierPlan.position.set(0, -300, 0);</p>
+        <p>monPremierPlan.rotation.set(-1, 0, 0);</p>
+        <br>
+        <p>var recetteDeDonut = new THREE.TorusGeometry(40, 10, 120, 100);</p>
+        <p>var monPremierDonut = new THREE.Mesh(recetteDeDonut, surface);</p>
+        <p>scene.add(monPremierDonut);</p>
+        <p>monPremierDonut.position.set(200, 150, 0);</p>
+    </div>
+</div>

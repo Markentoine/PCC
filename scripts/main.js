@@ -5,6 +5,8 @@
         const explanations = document.querySelector(".explanations");
         const currentDate = new Date();
         const nextSession = utilities.nextSessionDate(currentDate);
+        const title = document.getElementById('title');
+        const sessionAnnoucement = document.getElementById('session');
 
         // Explanations content according to date
 
@@ -15,32 +17,51 @@
             form.addEventListener('focusout', formUtilities.checkValidity);
             form.oninput = formUtilities.checkValidity;
             DOMConstruction.writeLines(sentences.before, explanations);
-        } else if (currentDate >= nextSession && currentDate <= utilities.nextSessionDate(currentDate, 'hourEndString')) {
-            const sessionAnnoucement = document.getElementById('session');
-            const title = document.getElementById('title');
+        } else if (currentDate >= nextSession && currentDate <= utilities.nextSessionDate(currentDate, 'hourEnd')) {
             title.textContent = 'PASTEURCODECLUB#ON AIR';
+            title.style.color = 'red';
             sessionAnnoucement.textContent = "La séance actuelle se termine dans:";
             DOMConstruction.countDown(utilities.currentSessionEnd(currentDate));
             DOMConstruction.writeLines(sentences.during, explanations);
         } else {
+            title.style.color = 'chartreuse';
             DOMConstruction.countDown(nextSession);
             DOMConstruction.writeLines(sentences.after, explanations);
         }
 
+        window.onpopstate = () => {
+            const path = window.location.pathname;
+            document.getElementById('main').innerHTML = routes[path]();
+            if (/index/.test(path)) {}
+            DOMConstruction.writeLines(sentences.after, document.querySelector('.explanations'));
+        };
+
         // event listeners
-        document.addEventListener('click', function (e) {
-            const target = e.target;
-            if (target.className === 'reveal') {
-                let codeStatus = target.nextElementSibling.style.display;
-                target.nextElementSibling.style.display = codeStatus === 'block' ? 'none' : 'block';
-            }
-        })
+        document.addEventListener('click', events.revealCode);
+        document.addEventListener('click', events.navTo);
 
     });
 
     const events = {
+        revealCode: function (e) {
+            const target = e.target;
+            if (target.className === 'reveal') {
+                e.stopPropagation();
+                let codeStatus = target.nextElementSibling.style.display;
+                target.nextElementSibling.style.display = codeStatus === 'block' ? 'none' : 'block';
+            }
+        },
 
-
+        navTo: function (e) {
+            const target = e.target;
+            if (e.target.className === 'nav') {
+                e.preventDefault();
+                const path = target.id;
+                window.history.pushState({}, '', window.location.origin + '/' + path);
+                const content = Handlebars.templates[path]();
+                document.getElementById('main').innerHTML = content;
+            }
+        },
     };
 
     const DOMConstruction = {
@@ -67,7 +88,8 @@
         },
 
         buildNewLine: (sentence, refElement) => {
-            document.querySelector('.explanations span').remove();
+            const currentSpan = document.querySelector('.explanations span')
+            if (currentSpan) currentSpan.remove();
             const div = document.createElement('div');
             div.classList.add('line');
             const span = document.createElement('span');
@@ -82,14 +104,14 @@
 
         typeWriter: (string, element) => {
             const chars = string.split('');
-            let counter = 100;
-            element.textContent = "\>";
+            let counter = 75;
+            element.textContent = "\>\>";
             chars.forEach(char => {
                 setTimeout(() => {
                     let text = element.textContent;
                     element.textContent = `${text}${char}`;
                 }, counter);
-                counter += 100;
+                counter += 75;
             })
         },
     };
@@ -112,15 +134,20 @@
             };
         },
 
-        nextSessionDate: (now, time = 'hourBegin') => new Date(`${utilities.nextSessionDay(now)}, ${sessionsDates.year()} ${sessionsDates[time]}`),
-
-        nextSessionDay: (now) => {
-            return sessionsDates.sessions.find(d => new Date(`${d}, ${sessionsDates.year()} ${sessionsDates.hourBegin}`) > now);
+        nextSessionDate: (now, time = 'hourBegin') => {
+            const nextDate = `${utilities.nextSessionDay(now)}, ${sessionsDates.year()} ${sessionsDates[time]}`;
+            return new Date(nextDate);
         },
-        currentSessionEnd: (now) => {
+
+        nextSessionDay: now => {
+            return sessionsDates.sessions.find(d => {
+                const beginningDate = `${d}, ${sessionsDates.year()} ${sessionsDates.hourBegin}`;
+                return new Date(beginningDate) > now;
+            });
+        },
+        currentSessionEnd: now => {
             return new Date(now.getFullYear(), now.getMonth(), now.getDate(), sessionsDates.hourEndObj.hours, sessionsDates.hourEndObj.minutes, sessionsDates.hourEndObj.seconds);
         },
-
 
         dateExpiredP: date => new Date() >= date,
     };
@@ -170,7 +197,7 @@
         hourEndObj: {
             hours: 13,
             minutes: 15,
-            seconds: 0
+            seconds: 0,
         },
         sessions: ['January 22', 'January 29', 'February 5', 'Frebruary 26', 'March 5', 'March 12', 'March 19', 'March 26'],
         signIn: '1er Janvier',
@@ -178,18 +205,28 @@
 
     const sentences = {
         before: ['Hello World!',
-            "Vous êtes bien sur le site du PasteurCodeClub du collège de Raon.",
-            `A partir du ${sessionsDates.signIn}, vous pourrez demander votre inscription sur ce site.`,
+            "Bienvenue au PasteurCodeClub du collège de Raon.",
+            `A partir du ${sessionsDates.signIn}, vous pourrez demander votre inscription au club.`,
             "A très bientôt!",
         ],
         after: ['Hello World!',
-            "Vous pouvez retrouver sur cette page ce que nous avons vu ensemble!",
-            "Happy Coding!"
+            "Vous pouvez retrouver ici tout ce que nous avons vu ensemble!",
+            "Happy Coding! ;-)"
         ],
         during: ['Bienvenue à cette nouvelle session!',
             'Continuons notre exploration!',
             'Happy Coding!'
         ],
+    };
+
+    const routes = {
+        '/index.html': Handlebars.templates.landing,
+        '/balle': Handlebars.templates.balle,
+        '/cube': Handlebars.templates.cube,
+        '/donut': Handlebars.templates.donut,
+        '/surface': Handlebars.templates.surface,
+        '/tube': Handlebars.templates.tube,
+        '/commencer': Handlebars.templates.commencer,
     };
 
 }());

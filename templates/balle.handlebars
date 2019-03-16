@@ -1,0 +1,36 @@
+<div class="sphere lessons">
+    <h1>DESSINONS-UNE-BALLE</h1>
+    <p>Pour créer des balles, des sphères, nous avons besoin:</p>
+    <ul>
+        <li>>>D'une recette que nous allons aller dénicher dans un livre de recettes appelé THREE. On
+            peut aussi dire que c'est un livre de formules magiques.</li>
+        <li>>>D'une surface pour la recouvrir.</li>
+    </ul>
+    <p>C'est parti! Dans la partie code vous pouvez recopier (sans copier-coller!!!) ces lignes:</p>
+    <button class='reveal'>VOIR LE CODE</button>
+    <div class="code">
+        <p>var recetteDeBalle = new THREE.SphereGeometry(150);</p>
+        <p>var surface = new THREE.MeshNormalMaterial(flat);</p>
+        <p>var maPremiereBalle = new THREE.Mesh(recetteDeBalle, surface);</p>
+        <p>scene.add(maPremiereBalle);</p>
+    </div>
+    <p>Ces lignes doivent vous apparaitre comme des formules de sorcellerie: c'est un peu ça coder! ;)</p>
+    <p>Voila ce que vous devriez voir apparaitre (cliquez sur 'HIDE CODE')</p>
+    <div class="screenshot" id="premiereBalle">
+        <img src="./assets/screenshots/premiereBalle.jpg" alt="">
+    </div>
+    <p>Cette balle est simple. Vous voyez qu'elle est faite de rectangles et qu'elle n'est donc pas
+        vraiment belle car elle n'est pas lisse.</p>
+    <p>Essayez maintenant de remplacer le nombre 150 par 50. Que se passe-t-il?</p>
+    <p>Remplacez-le encore par d'autres nombres! Coder c'est essayer!</p>
+    <p>On peut rendre cette balle plus lisse en ajoutant quelques nombres (des paramètres).</p>
+    <p>Modifier votre code ainsi:</p>
+    <button class='reveal'>VOIR LE CODE</button>
+    <div class="code">
+        <p>var recetteDeBalle = new THREE.SphereGeometry(150, 30, 20);</p>
+    </div>
+    <p>C'est mieux, non?</p>
+    <div class="screenshot" id="ballePlusLisse">
+        <img src="./assets/screenshots/ballepluslisse.jpg" alt="">
+    </div>
+</div>

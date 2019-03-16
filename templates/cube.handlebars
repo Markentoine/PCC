@@ -1,0 +1,41 @@
+<div class="cube lessons">
+    <h1>APPRENONS-MAINTENANT-A-DESSINER-DES-CUBES!</h1>
+    <p>Cette fois encore, nous allons ouvrir notre bibliothèque THREE et y chercher la formule pour
+        créer des boîtes.</p>
+    <p>La voici! Vous pouvez la rajouter à votre code:</p>
+    <button class='reveal'>VOIR LE CODE</button>
+    <div class="code">
+        <p>var recetteDeBoite = new THREE.CubeGeometry(100, 100, 100);</p>
+        <p>var maPremiereBoite = new THREE.Mesh(recetteDeBoite, surface);</p>
+        <p>scene.add(maPremiereBoite);</p>
+    </div>
+    <p>Alors? Que se passe-t-il? Vous ne voyez pas votre boîte?</p>
+    <p>Normal! Elle est cachée par votre balle!</p>
+    <p>Déplaçons un peu cette boîte pour l'apercevoir:</p>
+    <button class='reveal'>VOIR LE CODE</button>
+    <div class="code">
+        <p>maPremiereBoite.position.set(300, 0, 0);</p>
+    </div>
+    <p>Et voilà:</p>
+    <div class="screenshot" id="boiteDecalee">
+        <img src="./assets/screenshots/sphereBoite.jpg" alt="boite decalee">
+    </div>
+    <p>Mais ça pourrait être mieux...En ajoutant ça:</p>
+    <button class='reveal'>VOIR LE CODE</button>
+    <div class="code">
+        <p>maPremiereBoite.rotation.set(0.5, 0, 0);</p>
+    </div>
+    <div class="screenshot" id="boitePenchee">
+        <img src="./assets/screenshots/sphreBoitePenchee.jpg" alt="">
+    </div>
+    <p>Notre boîte est bien visible.</p>
+    <ul>Vous avez donc appris
+        <li>>> A créer une boite</li>
+        <li>>> A déplacer un objet</li>
+        <li>>>A faire tourner une objet sur lui-même</li>
+    </ul>
+    <p>On continue?</p>
+    <p>Modifiez les chiffres dans les parenthèses et observez l'effet.</p>
+    <p>Comprenez-vous à quoi correspondent ces chiffres?</p>
+    <p> Amusez-vous!</p>
+</div>
