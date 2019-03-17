@@ -1,5 +1,10 @@
 html {
     box-sizing: border-box;
+    font-size: calc(8px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+    line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+    font-family: 'Exo',
+        Helvetica,
+        sans-serif;
 }
 
 *,
@@ -14,11 +19,6 @@ body {
     background-color: black;
     width: 100vw;
     color: chartreuse;
-    font-size: calc(8px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
-    line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
-    font-family: 'Exo',
-        Helvetica,
-        sans-serif;
 }
 
 .blinking {
