@@ -32,7 +32,8 @@
         window.onpopstate = () => {
             const path = window.location.pathname;
             document.getElementById('main').innerHTML = routes[path]();
-            if (/index/.test(path)) {
+            if (/index/.test(path) || (/\/$/).test(path)) {
+                console.log('ok')
                 document.getElementById('rotateCube').appendChild(renderer.domElement);
                 render();
                 DOMConstruction.writeLines(sentences.after, document.querySelector('.explanations'));
