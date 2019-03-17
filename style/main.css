@@ -46,10 +46,6 @@ header p {
     font-size: 3rem;
 }
 
-main p {
-    margin: 0rem 0;
-}
-
 main {
     display: flex;
     flex-direction: column;
@@ -64,7 +60,7 @@ main {
     flex-direction: column;
     width: 45vw;
     height: 15vh;
-    margin-top: 1rem;
+    margin-top: .5rem;
 }
 
 #rotateCube {
@@ -228,7 +224,7 @@ button {
     transform 150ms ease;
     -webkit-appearance: none;
     -moz-appearance: none;
-    margin: 1rem;
+    margin: .5rem;
 }
 
 button:hover,
