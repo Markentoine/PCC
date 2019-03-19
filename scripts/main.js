@@ -5,6 +5,7 @@
         const explanations = document.querySelector(".explanations");
         const currentDate = new Date();
         const nextSession = utilities.nextSessionDate(currentDate);
+        console.log(nextSession);
         const title = document.getElementById('title');
         const sessionAnnoucement = document.getElementById('session');
 
@@ -18,6 +19,7 @@
             form.oninput = formUtilities.checkValidity;
             DOMConstruction.writeLines(sentences.before, explanations);
         } else if (currentDate >= nextSession && currentDate <= utilities.nextSessionDate(currentDate, 'hourEnd')) {
+            console.log(utilities.nextSessionDate(currentDate, 'hourEnd'));
             title.textContent = 'PASTEURCODECLUB#ON AIR';
             title.style.color = 'red';
             sessionAnnoucement.textContent = "La séance actuelle se termine dans:";
