@@ -5,7 +5,6 @@
         const explanations = document.querySelector(".explanations");
         const currentDate = new Date();
         const nextSession = utilities.nextSessionDate(currentDate);
-        console.log(utilities.currentSessionEnd(currentDate))
         const title = document.getElementById('title');
         const sessionAnnoucement = document.getElementById('session');
 
@@ -34,7 +33,6 @@
             const path = window.location.pathname;
             document.getElementById('main').innerHTML = routes[path]();
             if (/index/.test(path) || (path === '/')) {
-                console.log('ok')
                 document.getElementById('rotateCube').appendChild(renderer.domElement);
                 render();
                 DOMConstruction.writeLines(sentences.after, document.querySelector('.explanations'));
@@ -233,6 +231,7 @@
         '/surface': Handlebars.templates.surface,
         '/tube': Handlebars.templates.tube,
         '/commencer': Handlebars.templates.commencer,
+        '/avatarEtape1': Handlebars.templates.avatarEtape1,
     };
 
 }());

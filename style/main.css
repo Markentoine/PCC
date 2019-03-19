@@ -269,6 +269,10 @@ img {
     width: 40vw;
 }
 
+#avatar {
+    width: 40vw;
+}
+
 .lessons {
     margin-left: 2rem;
 }

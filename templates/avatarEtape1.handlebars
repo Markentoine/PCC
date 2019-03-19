@@ -1,0 +1,46 @@
+<div class="lessons avatar1">
+    <h1>UN AVATAR, C'EST QUOI?</h1>
+    <p>Dans les jeux, on fait la différence entre le joueur, la personne réelle et son avatar qui le représente dans le jeu.</p>
+    <h1>1-ERE-ETAPE-:-CONSTRUCTION</h1>
+    <p>Comme nous avons appris à créer des formes simples, nous allons donc maintenant nous en servir pour former l'avatar.</p>
+    <p>Nous n'allons évidemment pas créer un avatar ressemblant à un être humain. Cet avatar sera simple.</p>
+    <p>Il pourrait ressembler à ça par exemple ---></p>
+    <div class="screenshot">
+        <img src="../assets/screenshots/avatar.jpg" alt="avatar" id="avatar">
+    </div>
+    <p>Ce modèle est formé de 7 parties, des cylindres (tubes) et une sphère (balle).</p>
+    <p>Certains éléments peuvent être répétés comme les bras et les jambes.</p>
+    <p>Il ne faut pas bien entendu oublier de positionner les éléments les uns par rapport aux autres.</p>
+    <p>A vous de créer votre avatar.</p>
+    <button class="reveal">VOIR LE CODE</button>
+    <div class="code">
+        <p>var formeCorps = new THREE.CylinderGeometry(40, 15, 100);</p>
+        <p>var formeTete = new THREE.SphereGeometry(30, 100);</p>
+        <p>var formeBras = new THREE.CylinderGeometry(10, 10, 110);</p>
+        <p>var formeBassin = new THREE.CylinderGeometry(15, 40, 30);</p>
+        <p>var formeJambe = new THREE.CylinderGeometry(15, 10, 110);</p>
+        <p>var peau = new THREE.MeshNormalMaterial(flat);</p>
+        <p>var corps = new THREE.Mesh(formeCorps, peau);</p>
+        <p>var tete = new THREE.Mesh(formeTete, peau);</p>
+        <p>var brasDroit = new THREE.Mesh(formeBras, peau);</p>
+        <p>var brasGauche = new THREE.Mesh(formeBras, peau);</p>
+        <p>var bassin = new THREE.Mesh(formeBassin, peau);</p>
+        <p>var jambeDroite = new THREE.Mesh(formeJambe, peau);</p>
+        <p>var jambeGauche = new THREE.Mesh(formeJambe, peau);</p>
+        
+        <p>scene.add(corps);</p>
+        <p>scene.add(tete);</p>
+        <p>scene.add(brasDroit);</p>
+        <p>scene.add(brasGauche);</p>
+        <p>scene.add(bassin);</p>
+        <p>scene.add(jambeDroite);</p>
+        <p>scene.add(jambeGauche);</p>
+        
+        <p>tete.position.set(0, 80, 0);</p>
+        <p>brasDroit.position.set(-40, -5, 0);</p>
+        <p>brasGauche.position.set(40, -5, 0);</p>
+        <p>bassin.position.set(0, -50, 0);</p>
+        <p>jambeDroite.position.set(-25, -120, 0);</p>
+        <p>jambeGauche.position.set(25, -120, 0);</p>
+    </div>
+</div>
