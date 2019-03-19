@@ -205,7 +205,7 @@
             minutes: 15,
             seconds: 0,
         },
-        sessions: ['January 22', 'January 29', 'February 5', 'Frebruary 26', 'March 5', 'March 12', 'March 19', 'March 26'],
+        sessions: ['January 22', 'January 29', 'February 5', 'Frebruary 26', 'March 5', 'March 12', 'March 19', 'March 26', 'April 2', 'April 23', 'April 30'],
         signIn: '1er Janvier',
     }
 
