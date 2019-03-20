@@ -2,6 +2,7 @@
     'use strict'
 
     document.addEventListener("DOMContentLoaded", function (e) {
+        const main = document.querySelector('main');
         const explanations = document.querySelector(".explanations");
         const currentDate = new Date();
         const nextSession = utilities.nextSessionDate(currentDate);
@@ -29,9 +30,11 @@
             DOMConstruction.writeLines(sentences.after, explanations);
         }
 
+        main.innerHTML = Handlebars.templates.landing;
+
         window.onpopstate = () => {
             const path = window.location.pathname;
-            document.getElementById('main').innerHTML = routes[path]();
+            main.innerHTML = routes[path]();
             if (/index/.test(path) || (path === '/')) {
                 document.getElementById('rotateCube').appendChild(renderer.domElement);
                 render();
@@ -62,7 +65,7 @@
                 const path = target.id;
                 window.history.pushState({}, '', window.location.origin + '/' + path);
                 const content = Handlebars.templates[path]();
-                document.getElementById('main').innerHTML = content;
+                main.innerHTML = content;
             }
         },
     };
