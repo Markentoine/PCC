@@ -63,7 +63,7 @@
                 const path = target.id;
                 window.history.pushState({}, '', window.location.origin + '/' + path);
                 const content = Handlebars.templates[path]();
-                main.innerHTML = content;
+                document.querySelector('main').innerHTML = content;
             }
         },
     };
