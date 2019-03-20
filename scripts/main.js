@@ -3,6 +3,8 @@
 
     document.addEventListener("DOMContentLoaded", function (e) {
         const main = document.querySelector('main');
+        main.innerHTML = Handlebars.templates.landing();
+
         const explanations = document.querySelector(".explanations");
         const currentDate = new Date();
         const nextSession = utilities.nextSessionDate(currentDate);
@@ -29,6 +31,7 @@
             DOMConstruction.countDown(nextSession);
             DOMConstruction.writeLines(sentences.after, explanations);
         }
+
 
         window.onpopstate = () => {
             const path = window.location.pathname;
