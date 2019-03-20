@@ -1,0 +1,27 @@
+<div class="lessons assemblage">
+    <h1>ASSEMBLER-VOTRE-AVATAR</h1>
+    <p>Après la phase de construction, votre avatar est constitué de plusieurs formes (4, 7 ou davantage).</p>
+    <p>Mais que va-t-il se passer si on veut déplacer cet avatar?</p>
+    <p>Car si nous voulons créer un jeu, il faudra bien que nous puissions déplacer notre avatar!</p>
+    <p>Va-t-on devoir ordonner à chaque pièce de se déplacer?!</p>
+    <p>Avouez que ce serait un peu pénible!!!</p>
+    <p>Heureusement, il existe une solution bien plus efficace</p>
+    <p>Au lieu d'ajouter chaque nouvelle forme de notre avatar à la scène (scene.add()), nous allons les ajouter à la partie centrale de l'avatar, son corps.</p>
+    <button class="reveal">VOIR LE CODE</button>
+    <div class="code">
+        <p>scene.add(corps);</p>
+        <p>corps.add(tete);</p>
+        <p>corps.add(brasDroit);</p>
+        <p>corps.add(brasGauche);</p>
+        <p>corps.add(bassin);</p>
+        <p>corps.add(jambeDroite);</p>
+        <p>corps.add(jambeGauche);</p>
+    </div>
+    <p>Vous observez que dans ce code, le corps est ajouté à la scène pour qu'on le voit apparaître.</p>
+    <p>Et vous voyez aussi que toutes les autres parties de notre avatar sont rattachées à ce corps.</p>
+    <p>Désormais, nous sommes capables de faire bouger l'avatar en ordonnant au corps de bouger.</p>
+    <p>Toutes ses parties suivront...</p>
+    <p>Pratique!!!</p>
+    <p>A la prochaine étape, nous allons pouvoir le déplacer! A tout de suite!</p>
+
+</div>

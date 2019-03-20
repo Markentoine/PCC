@@ -232,6 +232,7 @@
         '/tube': Handlebars.templates.tube,
         '/commencer': Handlebars.templates.commencer,
         '/avatarEtape1': Handlebars.templates.avatarEtape1,
+        '/avatarEtape2': Handlebars.templates.avatarEtape2,
     };
 
 }());
