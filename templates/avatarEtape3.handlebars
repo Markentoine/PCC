@@ -1,0 +1,73 @@
+<div class="lessons bouger">
+    <h1>BOUGER</h1>
+    <p>Nous entrons maintenant dans la partie vraiment intéressante!!</p>
+    <p>A la fin de cette leçon, vous allez savoir déplacer votre avatar à l'aide du clavier de votre ordinateur!</p>
+    <p>Un nouveau super-pouvoir à ajouter à ceux que vous avez appris jusque là!</p>
+    <br>
+    <p>ECOUTER</p>
+    <p>Il nous faut tout d'abord faire écouter le programme qui va exécuter les ordres donnés par les touches du clavier.</p>
+    <p>Si on appuie sur la flèche droite, il faut que le programme écoute si cette touche a été abaissée.</p>
+    <p>Comment faire?</p>
+    <p>On va simplement dire au programme où écouter puis on va lui dire que quand il aura entendu quelque chose, qu'il exécute l'ordre donné.</p>
+    <button class="reveal">VOIR LE CODE</button>
+    <div class="code">
+        <p>document.addEventListener('keydown', bougeAvatar);</p>
+    </div>
+    <p>On lui a dit d'écouter (listen) dans tout le document n'importe quelle touche abaissée (keydown) et d'exécuter l'ordre "bougeAvatar"</p>
+    <p>Vous voyez combien il est important de connaître l'anglais en programmation! Ca nous aide beaucoup à comprendre ce qu'on fait.</p>
+    <p>Cela étant, le programme ne sait pas ce que veut dire "bougeAvatar"; il va falloir lui expliquer.</p>
+    <p>Quand on désire expliquer une action à un programme, on lui décrire ces ordres dans ce qu'on appelle une "fonction" (function)</p>
+    <p>Voici la fonction qui explique au programme quoi faire:</p>
+    <button class="reveal">VOIR LE CODE</button>
+    <div class="code">
+        <p>function bougeAvatar(event) {</p>
+        <p>var code = event.code;</p>
+        <p>if (code === 'ArrowLeft') corps.position.x -= 5;</p>
+        <p>renderer.render(scene, camera);</p>
+        <p>}</p>
+    </div>
+    <p>Une fonction s'écrit ainsi:</p>
+    <button class="reveal">DEFINIR UNE FONCTION</button>
+    <div class="code">
+        <p>function nomDeLaFonction() {}</p>
+    </div>
+    <p>Les ordres sont expliqués entre les accolades.</p>
+    <p>Vous vous rappelez que nous souhaitons déplacer à gauche notre avatar lorsque la flèche gauche est appuyée.</p>
+    <p>L'ordre sera donc:</p>
+    <button class="reveal">DEPLACER A GAUCHE</button>
+    <div class="code">
+        <p>var code = event.code;</p>
+        <p>if (code === 'ArrowLeft" corps.position = corps.position + 5;</p>
+    </div>
+    <p>EXPLICATIONS</p>
+    <p>Comme le programme écoute toutes les touches abaissées, appuyées (event keydown),</p>
+    <p>on veut savoir d'abord quelle touche a été appuyée,</p>
+    <p>quel est le code de la touche qui a créé un "event", un événement: event.code</p>
+    <p>Une fois que la réponse nous a été donnée, on la stocke dans une boîte, une variable (var) pour la retrouver ensuite.</p>
+    <p>Si cette touche est bien la flèche gauche (ArrowLeft) alors on augmente la position de l'avatar de 5 unités.</p>
+    <p>A chaque fois que la flèche gauche sera appuyée, le programma exécute l'ordre : déplacer l'avatar de 5 unités à gauche!</p>
+    <p>Youppiiii!!! C'est exactement ce qu'on souhaitait!</p>
+    <p>Vous savez quoi? Je suis sûr que vous pouvez écrire tout seul le code pour déplacer l'avatar</p>
+    <ul>
+        <li>>>> à droite (ArrowRight)</li>
+        <li>>>> en haut (ArrowUp)</li>
+        <li>>>> en bas (ArrowDown)</li>
+    </ul>
+    <p>A vous de jouer!</p>
+    <button class="reveal">VOIR LA SOLUTION</button>
+    <div class="code">
+        <p>function bougeAvatar(e) {</p>
+        <p>var code = e.code;</p>
+        <p>if (code === 'ArrowLeft') corps.position.x -= 5;</p>
+        <p>if (code === 'ArrowRight') corps.position.x += 5;</p>
+        <p>if (code === 'ArrowUp') corps.position.z -= 5;</p>
+        <p>if (code === 'ArrowDown') corps.position.z += 5;</p>
+        <p>renderer.render(scene, camera);</p>
+        <p>}</p>
+    </div>
+    <p>Pas mal ce nouveau super-pouvoir, non?</p>
+    <img src="../assets/screenshots/moveAvatar.gif" alt="avatar moving" id="moveAvatar">
+
+
+
+</div>

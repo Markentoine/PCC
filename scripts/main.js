@@ -247,6 +247,7 @@
         '/commencer': Handlebars.templates.commencer,
         '/avatarEtape1': Handlebars.templates.avatarEtape1,
         '/avatarEtape2': Handlebars.templates.avatarEtape2,
+        '/avatarEtape3': Handlebars.templates.avatarEtape3,
     };
 
 }());

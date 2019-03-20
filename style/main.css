@@ -265,11 +265,9 @@ img {
 }
 
 #boiteDecalee,
-#boitePenchee {
-    width: 40vw;
-}
-
-#avatar {
+#boitePenchee
+#avatar,
+#moveAvatar {
     width: 40vw;
 }
 

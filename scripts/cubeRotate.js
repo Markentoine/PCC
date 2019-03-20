@@ -15,7 +15,7 @@ const geometry = new THREE.BoxGeometry(1, 1, 1);
 const material = new THREE.MeshPhongMaterial({
     color: 0xcccccc,
 });
-const light = new THREE.HemisphereLight(0e7723, 'chartreuse', 2);
+const light = new THREE.HemisphereLight(0e7723, 'chartreuse', 3);
 light.position.set(0.1, 1, 1);
 scene.add(light);
 const cube = new THREE.Mesh(geometry, material);
