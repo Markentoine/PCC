@@ -37,7 +37,8 @@
             const path = window.location.pathname;
             main.innerHTML = routes[path]();
             if (/index/.test(path) || (path === '/')) {
-                document.getElementById('rotateCube').appendChild(renderer.domElement);
+                const rotateCube = document.getElementById('rotateCube');
+                rotateCube.appendChild(renderer.domElement);
                 render();
                 DOMConstruction.writeLines(sentences.after, document.querySelector('.explanations'));
             }
