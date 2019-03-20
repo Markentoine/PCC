@@ -29,8 +29,8 @@
             DOMConstruction.countDown(nextSession);
             DOMConstruction.writeLines(sentences.after, explanations);
         }
-
-        main.innerHTML = Handlebars.templates.landing;
+        const landingTemplate = Handlebars.templates.landing;
+        main.innerHTML = landingTemplate();
 
         window.onpopstate = () => {
             const path = window.location.pathname;
