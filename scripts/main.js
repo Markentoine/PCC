@@ -20,7 +20,7 @@
             form.addEventListener('focusout', formUtilities.checkValidity);
             form.oninput = formUtilities.checkValidity;
             DOMConstruction.writeLines(sentences.before, explanations);
-        } else if (currentDate < utilities.currentSessionEnd(currentDate)) {
+        } else if (currentDate > utilities.currentSessionBegin(currentDate) && currentDate < utilities.currentSessionEnd(currentDate)) {
             title.textContent = 'PASTEURCODECLUB#ON AIR';
             title.style.color = 'red';
             sessionAnnoucement.textContent = "La séance actuelle se termine dans:";
@@ -156,6 +156,10 @@
             return new Date(now.getFullYear(), now.getMonth(), now.getDate(), sessionsDates.hourEndObj.hours, sessionsDates.hourEndObj.minutes, sessionsDates.hourEndObj.seconds);
         },
 
+        currentSessionBegin: now => {
+            return new Date(now.getFullYear(), now.getMonth(), now.getDate(), sessionsDates.hourBeginObj.hours, sessionsDates.hourBeginObj.minutes, sessionsDates.hourBeginObj.seconds);
+        },
+
         dateExpiredP: date => new Date() >= date,
     };
 
@@ -201,6 +205,11 @@
         year: () => new Date().getFullYear(),
         hourBegin: '12:30:00',
         hourEnd: '13:15:00',
+        hourBeginObj: {
+            hours: 12,
+            minutes: 30,
+            seconds: 0,
+        },
         hourEndObj: {
             hours: 13,
             minutes: 15,
