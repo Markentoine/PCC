@@ -209,11 +209,15 @@ a {
     justify-content: flex-start;
 }
 
+.navigation ul li {
+    flex-basis: 15vw;
+}
+
 button {
+    width: 100%;
     text-decoration: none;
     border: .2rem solid chartreuse;
     padding: .5rem;
-    width: 10vw;
     background-color: green;
     color: chartreuse;
     cursor: pointer;
@@ -271,10 +275,7 @@ img {
     width: 40vw;
 }
 
-.lessons {
-    margin-left: 2rem;
-}
-
+.lessons,
 .lessons p {
     margin-left: 2rem;
 }
