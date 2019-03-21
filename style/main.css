@@ -183,6 +183,10 @@ a {
     padding: 2rem;
 }
 
+a:first-of-type {
+    padding: 0;
+}
+
 .container {
     display: flex;
 }
