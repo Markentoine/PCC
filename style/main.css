@@ -162,6 +162,14 @@ input[type="submit"] {
     vertical-align: center;
 }
 
+.greenLight {
+    border: 3px solid chartreuse;
+}
+
+.redLight {
+    border: 3px solid red;
+}
+
 /*-------------------------------------*/
 
 footer {
@@ -202,14 +210,6 @@ a:first-of-type {
     margin-right: .5rem;
 }
 
-.greenLight {
-    border: 3px solid chartreuse;
-}
-
-.redLight {
-    border: 3px solid red;
-}
-
 .lessons p {
     margin: 2rem 0;
 }
@@ -217,10 +217,11 @@ a:first-of-type {
 .navigation ul {
     display: flex;
     justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
 .navigation ul li {
-    flex-basis: 15vw;
+    flex-basis: 13vw;
 }
 
 button {
