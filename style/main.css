@@ -33,6 +33,7 @@ h1 {
 header {
     position: fixed;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     width: 100vw;
@@ -64,11 +65,13 @@ main {
 }
 
 #rotateCube {
-    width: 45vw;
+    flex-basis: 44vw;
 }
 
 .presentation {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     width: 98vw;
 }
 
