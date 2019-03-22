@@ -33,7 +33,6 @@ h1 {
 header {
     position: fixed;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     width: 100vw;
@@ -59,7 +58,7 @@ main {
 .explanations {
     display: flex;
     flex-direction: column;
-    width: 45vw;
+    flex-basis: 45vw;
     height: 15vh;
     margin-top: .5rem;
 }
