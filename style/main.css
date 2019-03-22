@@ -33,6 +33,7 @@ h1 {
 header {
     position: fixed;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     width: 100vw;
@@ -44,6 +45,10 @@ header {
 
 header p {
     font-size: 3rem;
+}
+
+.editorCode {
+    margin-right: 3rem;
 }
 
 main {
