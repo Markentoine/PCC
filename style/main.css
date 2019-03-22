@@ -167,14 +167,20 @@ input[type="submit"] {
 footer {
     position: fixed;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     width: 100vw;
     height: 6vh;
     border-top: 2px dotted chartreuse;
     background-color: black;
     margin-top: 94vh;
     margin-left: .5rem;
+}
+
+.github {
+    fill: chartreuse;
+    width: 2vw;
+    margin-right: 1rem;
 }
 
 a {
