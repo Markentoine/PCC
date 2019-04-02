@@ -198,6 +198,10 @@ footer {
     margin-right: 1rem;
 }
 
+.gif {
+    width: 40vw;
+}
+
 a {
     text-decoration: none;
     color: yellowgreen;
@@ -288,8 +292,7 @@ img {
 
 #boiteDecalee,
 #boitePenchee
-#avatar,
-#moveAvatar {
+#avatar,{
     width: 40vw;
 }
 
