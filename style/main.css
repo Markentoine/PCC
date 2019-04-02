@@ -301,6 +301,16 @@ img {
     margin-left: 2rem;
 }
 
+.red-cross {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.red-cross div {
+    width: 50%;
+}
+
 ul {
     margin: 2rem 4rem;
 }
