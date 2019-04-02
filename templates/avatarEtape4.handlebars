@@ -1,0 +1,40 @@
+<div class="lessons camera">
+    <h1>CAMERA</h1>
+    <h2>LE PROBLEME</h2>
+    <p>Vous avez remarqué dans l'exercice précédent que lorsque nous faisons bouger notre avatar, il s'éloigne de nous ou passe carrément derrière l'écran.</p>
+    <p>C'est embêtant si on veut jouer!</p>
+    <p>Il faudrait donc que nous puissions rester avec notre avatar au fur et à mesure de ses déplacements.</p>
+    <h2>UNE CAMERA?</h2>
+    <p>Pour voir la scène, le programme utilise une caméra.</p>
+    <p>Si vous allez jeter un oeil à partir de la ligne 10 dans l'éditeur de code, là où vous écrivez vos lignes de code, vous verrez que la caméra est ajoutée à la scène.</p>
+    <button class="reveal">LA CAMERA</button>
+    <div class="code">
+        <p>var camera = new THREE.PerspectiveCamera(75, aspectRatio, 1, 10000);</p>
+        <p>camera.position.z = 500;</p>
+        <p>scene.add(camera);</p>
+    </div>
+    <h2>LA SOLUTION</h2>
+    <p>Par conséquent, pluôt que de l'attacher à la scène, on pourrait l'attacher à notre avatar!</p>
+    <p>Ainsi, elle suivrait notre avatar sans jamais le lâcher d'une semelle!</p>
+    <p>Essayez maintenant d'attacher la caméra à votre avatar. N'oubliez pas de supprimer la ligne de code qui attachait la caméra à la scène.</p>
+    <button class="reveal">LE CODE</button>
+    <div class="code">
+        <p>corps.add(camera);</p>
+    </div>
+    <h2>MAIS ON NE VOIT RIEN!</h2>
+    <p>L'autre problème désormais, c'est que nous ne percevons plus du tout les déplacements de notre avatar car nous le suivons sans cesse.</p>
+    <p>On ne peut donc pas vraiment se rendre compte qu'il bouge s'il n'y a rien autour de lui!</p>
+    <p>Nous devons donc créer un environnement fixe autour de notre personnage pour avoir la sensation du mouvement.</p>
+    <p>Nous ajoutons donc des murs dans le décor et créons un couloir dans lequel notre bonhomme va se déplacer.</p>
+    <button class="reveal">LE CODE</button>
+    <div class="code">
+        <p>var cube = new THREE.CubeGeometry(20, 500, 1000);</p>
+        <p>var mur = new THREE.Mesh(cube, peau);</p>
+        <p>var mur2 = new THREE.Mesh(cube, peau);</p>
+        <p>scene.add(mur);</p>
+        <p>scene.add(mur2);</p>
+        <p>mur.position.set(60, -100, 10);</p>
+        <p>mur2.position.set(-120, -100, 10);</p>
+        <p>corps.position.set(0, -180, 10);</p>
+    </div>
+</div>
