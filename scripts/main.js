@@ -251,3 +251,47 @@
     };
 
 }());
+
+/*
+ var fut = new THREE.CylinderGeometry(10, 10, 100);
+  var couronne = new THREE.CylinderGeometry(1, 30, 150);
+
+  var material = new THREE.MeshPhongMaterial({
+    color: 'brown',
+    shininess: 20,
+    specular: 'lightgrey',
+    side: THREE.DoubleSide,
+    flatShading: true
+  });
+
+var green = new THREE.MeshPhongMaterial({
+    color: 'green',
+    shininess: 20,
+    specular: 'lightgrey',
+    side: THREE.DoubleSide,
+    flatShading: true
+});
+
+var compteurArbres = 0;
+var compteurLignes = 0;
+var coordX = -250;
+var coordZ = -250;
+
+while (compteurLignes < 10) {
+    while (compteurArbres < 10) {
+        var newArbre = new THREE.Mesh(fut, material);
+        var feuillage = new THREE.Mesh(couronne, green);
+        feuillage.position.set(0, 100, 0);
+        newArbre.add(feuillage);
+
+        scene.add(newArbre);
+        newArbre.position.set(coordX, 10, coordZ);
+        coordX += 100;
+        compteurArbres++;
+    }
+    compteurArbres = 0;
+    coordX = -250;
+    coordZ += 100;
+    compteurLignes++;
+}
+*/
