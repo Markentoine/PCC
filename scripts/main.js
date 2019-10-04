@@ -201,8 +201,8 @@
     };
 
     const sessionsDates = {
-        signinBegin: new Date('January 1, 2019'),
-        signinEnd: new Date('January 14, 2019'),
+        signinBegin: new Date('October 10, 2019'),
+        signinEnd: new Date('October 17, 2019'),
         year: () => new Date().getFullYear(),
         hourBegin: '12:30:00',
         hourEnd: '13:15:00',
@@ -216,8 +216,8 @@
             minutes: 15,
             seconds: 0,
         },
-        sessions: ['January 22', 'January 29', 'February 5', 'Frebruary 26', 'March 5', 'March 12', 'March 19', 'March 26', 'April 2', 'April 23', 'April 30', 'May 7', 'May 21', 'May 28', 'June 4', 'June 11', 'June 18', 'June 25', 'July 2'],
-        signIn: '1er Janvier',
+        sessions: ['November 2', 'November 9', 'November 16', 'November 23', 'November 30'],
+        signIn: '14 Octobre',
     }
 
     const sentences = {
