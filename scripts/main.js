@@ -14,8 +14,11 @@
         // Explanations content according to date
 
         if (utilities.dateExpiredP(sessionsDates.signinBegin) && currentDate <= sessionsDates.signinEnd) {
+            window.history.pushState({}, '', window.location.origin + '/' + "inscription");
+            const content = Handlebars.templates["inscriptionForm"]();
+            document.querySelector('main').innerHTML = content;
             const form = document.querySelector('form');
-            form.style.visibility = 'visible';
+            //form.style.visibility = 'visible';
             form.addEventListener('focusin', formUtilities.greenLight);
             form.addEventListener('focusout', formUtilities.checkValidity);
             form.oninput = formUtilities.checkValidity;
@@ -237,8 +240,8 @@
     };
 
     const routes = {
-        '/': Handlebars.templates.inscriptionForm,
-        '/index.html': Handlebars.templates.inscriptionForm,
+        '/': Handlebars.templates.landing,
+        '/index.html': Handlebars.templates.landing,
         '/balle': Handlebars.templates.balle,
         '/cube': Handlebars.templates.cube,
         '/donut': Handlebars.templates.donut,
