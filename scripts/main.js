@@ -202,7 +202,7 @@
 
     const sessionsDates = {
         signinBegin: new Date('October 10, 2019'),
-        signinEnd: new Date('October 17, 2019'),
+        signinEnd: new Date('October, 2019'),
         year: () => new Date().getFullYear(),
         hourBegin: '12:30:00',
         hourEnd: '13:15:00',
@@ -237,8 +237,8 @@
     };
 
     const routes = {
-        '/': Handlebars.templates.landing,
-        '/index.html': Handlebars.templates.landing,
+        '/': Handlebars.templates.inscriptionForm,
+        '/index.html': Handlebars.templates.inscriptionForm,
         '/balle': Handlebars.templates.balle,
         '/cube': Handlebars.templates.cube,
         '/donut': Handlebars.templates.donut,
