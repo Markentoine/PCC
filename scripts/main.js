@@ -201,7 +201,7 @@
     };
 
     const sessionsDates = {
-        signinBegin: new Date('October 10, 2019'),
+        signinBegin: new Date('October 4, 2019'),
         signinEnd: new Date('October 17, 2019'),
         year: () => new Date().getFullYear(),
         hourBegin: '12:30:00',
